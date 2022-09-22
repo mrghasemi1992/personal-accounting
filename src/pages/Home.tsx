@@ -4,13 +4,11 @@ import { useImmer } from "use-immer";
 
 import NewTransactionModal from "../components/NewTransactionModal";
 import Transactions from "../components/Transactions";
-import Modal from "../components/common/Modal";
 
 import { Transaction } from "../interfaces";
 import sampleData from "../data/sampleData.json";
 
 import { ReactComponent as NoData } from "../assets/images/home/no-data.svg";
-import { sample } from "underscore";
 
 const Home = () => {
   const [newTransactionIsOpen, setNewTransactionIsOpen] = useState(false);
