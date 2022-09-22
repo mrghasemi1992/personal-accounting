@@ -28,7 +28,7 @@ const Settings = () => {
         isOpen={modalIsOpen}
         setIsOpen={setModalIsOpen}
         rightButtonText="Import"
-        rightButtonClassName="bg-red-500 text-white"
+        rightButtonClassName="bg-red-500"
         onSubmit={handleImport}
       >
         <p className="text-red-500">

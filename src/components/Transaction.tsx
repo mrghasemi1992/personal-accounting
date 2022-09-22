@@ -157,7 +157,7 @@ const Transaction = ({
       <Modal
         isOpen={deleteModalIsOpen}
         setIsOpen={setDeleteModal}
-        rightButtonClassName="bg-red-500 hover:bg-red-600 text-white rounded-md px-4 py-2 transition-colors duration-300"
+        rightButtonClassName="bg-red-500"
         rightButtonText="Delete"
         onSubmit={handleRemove}
       >

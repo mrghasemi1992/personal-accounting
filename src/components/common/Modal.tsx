@@ -71,9 +71,11 @@ const Modal = ({
                     {leftButtonText ? leftButtonText : "Close"}
                   </button>
                   <button
-                    className={`bg-blue-500 text-white rounded-md px-4 py-2${
-                      rightButtonClassName ? " " + rightButtonClassName : ""
-                    }`}
+                    className={
+                      rightButtonClassName
+                        ? `${rightButtonClassName} text-white rounded-md px-4 py-2`
+                        : "bg-blue-500 text-white rounded-md px-4 py-2"
+                    }
                     onClick={onSubmit}
                   >
                     {rightButtonText ? rightButtonText : "Submit"}
