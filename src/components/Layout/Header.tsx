@@ -36,7 +36,7 @@ const Header = () => {
             initial={{ opacity: 0, x: -500 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -500 }}
-            className="fixed inset-0 bg-white z-10 px-8 py-16"
+            className="fixed inset-0 bg-white z-10 px-8 py-16 flex flex-col gap-y-4"
             transition={{ duration: 0.3, ease: "easeInOut" }}
           >
             <CloseIcon
@@ -46,20 +46,30 @@ const Header = () => {
             <Link
               to="/"
               className={`${
-                location.pathname === "/" ? "text-blue-600 " : ""
-              }text-xl font-medium`}
+                location.pathname === "/" ? "text-blue-600 " : "text-gray-600"
+              } text-xl font-medium`}
               onClick={() => setMenuIsOpen(false)}
             >
               Transactions
             </Link>
-            <div className="text-xl font-medium my-4 text-gray-300">
+            <Link
+              to="/reports"
+              className={`${
+                location.pathname === "/reports"
+                  ? "text-blue-600 "
+                  : "text-gray-600"
+              } text-xl font-medium`}
+              onClick={() => setMenuIsOpen(false)}
+            >
               Reports
-            </div>
+            </Link>
             <Link
               to="/settings"
               className={`${
-                location.pathname === "/settings" ? "text-blue-600 " : ""
-              }text-xl font-medium`}
+                location.pathname === "/settings"
+                  ? "text-blue-600 "
+                  : "text-gray-600"
+              } text-xl font-medium`}
               onClick={() => setMenuIsOpen(false)}
             >
               Settings
