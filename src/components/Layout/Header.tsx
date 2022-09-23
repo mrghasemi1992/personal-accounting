@@ -4,6 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 
 import { ReactComponent as ListIcon } from "../../assets/icons/common/list.svg";
 import { ReactComponent as CloseIcon } from "../../assets/icons/common/close.svg";
+import logo from "../../assets/images/logo.png";
 
 const Header = () => {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
@@ -22,12 +23,15 @@ const Header = () => {
 
   return (
     <header>
-      <div className="px-4 py-5 bg-blue-600 flex gap-x-5 items-center text-lg text-white">
-        <ListIcon
-          className="text-white transform scale-110 cursor-pointer"
-          onClick={() => setMenuIsOpen(!menuIsOpen)}
-        />
-        <h1>{headerTitle}</h1>
+      <div className="px-4 py-5 bg-blue-600 flex justify-between items-center text-lg text-white">
+        <div className="flex gap-x-5 items-center">
+          <ListIcon
+            className="text-white transform scale-110 cursor-pointer"
+            onClick={() => setMenuIsOpen(!menuIsOpen)}
+          />
+          <h1>{headerTitle}</h1>
+        </div>
+        <img src={logo} width={32} height={32} alt="Logo" />
       </div>
 
       <AnimatePresence>
