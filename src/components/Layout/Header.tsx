@@ -4,6 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 
 import { ReactComponent as ListIcon } from "../../assets/icons/common/list.svg";
 import { ReactComponent as CloseIcon } from "../../assets/icons/common/close.svg";
+import logo from "../../assets/images/logo.png";
 
 const Header = () => {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
@@ -22,12 +23,15 @@ const Header = () => {
 
   return (
     <header>
-      <div className="px-4 py-5 bg-blue-600 flex gap-x-5 items-center text-lg text-white">
-        <ListIcon
-          className="text-white transform scale-110 cursor-pointer"
-          onClick={() => setMenuIsOpen(!menuIsOpen)}
-        />
-        <h1>{headerTitle}</h1>
+      <div className="px-4 py-5 bg-blue-600 flex justify-between items-center text-lg text-white">
+        <div className="flex gap-x-5 items-center">
+          <ListIcon
+            className="text-white transform scale-110 cursor-pointer"
+            onClick={() => setMenuIsOpen(!menuIsOpen)}
+          />
+          <h1>{headerTitle}</h1>
+        </div>
+        <img src={logo} width={32} height={32} alt="Logo" />
       </div>
 
       <AnimatePresence>
@@ -36,7 +40,7 @@ const Header = () => {
             initial={{ opacity: 0, x: -500 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -500 }}
-            className="fixed inset-0 bg-white z-10 px-8 py-16"
+            className="fixed inset-0 bg-white z-10 px-8 py-16 flex flex-col gap-y-4"
             transition={{ duration: 0.3, ease: "easeInOut" }}
           >
             <CloseIcon
@@ -46,20 +50,30 @@ const Header = () => {
             <Link
               to="/"
               className={`${
-                location.pathname === "/" ? "text-blue-600 " : ""
-              }text-xl font-medium`}
+                location.pathname === "/" ? "text-blue-600 " : "text-gray-600"
+              } text-xl font-medium`}
               onClick={() => setMenuIsOpen(false)}
             >
               Transactions
             </Link>
-            <div className="text-xl font-medium my-4 text-gray-300">
+            <Link
+              to="/reports"
+              className={`${
+                location.pathname === "/reports"
+                  ? "text-blue-600 "
+                  : "text-gray-600"
+              } text-xl font-medium`}
+              onClick={() => setMenuIsOpen(false)}
+            >
               Reports
-            </div>
+            </Link>
             <Link
               to="/settings"
               className={`${
-                location.pathname === "/settings" ? "text-blue-600 " : ""
-              }text-xl font-medium`}
+                location.pathname === "/settings"
+                  ? "text-blue-600 "
+                  : "text-gray-600"
+              } text-xl font-medium`}
               onClick={() => setMenuIsOpen(false)}
             >
               Settings
