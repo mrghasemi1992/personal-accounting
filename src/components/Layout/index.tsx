@@ -1,3 +1,4 @@
+import { AnimatePresence } from "framer-motion";
 import { ReactNode } from "react";
 
 import { useToastContext } from "../../App";
@@ -9,18 +10,25 @@ import Header from "./Header";
 type Props = { children: ReactNode };
 
 const Layout = ({ children }: Props) => {
-  const { toastState, setToastState } = useToastContext();
+  const { toasts, setToasts } = useToastContext();
 
   return (
     <>
       <Header />
       <main>{children}</main>
-      <Toast
-        isOpen={toastState.state}
-        setState={setToastState}
-        text={toastState.text}
-        type={toastState.type}
-      />
+      <AnimatePresence>
+        {toasts.map((toast, index) => (
+          <Toast
+            key={index}
+            index={index}
+            isOpen={toast.state}
+            setToasts={setToasts}
+            toasts={toasts}
+            text={toast.text}
+            type={toast.type}
+          />
+        ))}
+      </AnimatePresence>
     </>
   );
 };

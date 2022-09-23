@@ -6,34 +6,32 @@ import Home from "./pages/Home";
 import Reports from "./pages/Reports";
 import Settings from "./pages/Settings";
 
-export type ToastStateIF = {
+export type Toast = {
   state: boolean;
   text: string;
   type: "success" | "error";
 };
 
 type ToastContextIF = {
-  toastState: ToastStateIF;
-  setToastState: (state: ToastStateIF) => void;
+  toasts: Toast[];
+  setToasts: (state: Toast[]) => void;
 };
 
 export const ToastContext = createContext<ToastContextIF>({
-  toastState: { state: false, text: "", type: "success" },
-  setToastState: () => {},
+  toasts: [],
+  setToasts: () => {},
 });
 
 export const useToastContext = () => useContext(ToastContext);
 
 const App = () => {
-  const [toastState, setToastState] = useState<ToastStateIF>({
-    state: false,
-    text: "",
-    type: "success",
-  });
+  // @ts-ignore
+  const [toasts, setToasts] = useState<Toast>([]);
 
   return (
     <BrowserRouter>
-      <ToastContext.Provider value={{ toastState, setToastState }}>
+      {/* @ts-ignore */}
+      <ToastContext.Provider value={{ toasts, setToasts }}>
         <Layout>
           <Routes>
             <Route path="/" element={<Home />} />

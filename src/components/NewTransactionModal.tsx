@@ -55,7 +55,7 @@ const NewTransactionModal = ({
   const [categoryIsOpen, setCategoryIsOpen] = useState(false);
   const [subCategoryIsOpen, setSubCategoryIsOpen] = useState(false);
   const [subCategoryList, setSubCategoryList] = useState<string[]>([]);
-  const { setToastState } = useToastContext();
+  const { toasts, setToasts } = useToastContext();
 
   const resetForm = () => {
     setFormData((draft) => {
@@ -114,11 +114,14 @@ const NewTransactionModal = ({
     if (!handleErrors()) {
       if (!transactionIdForEdit) {
         transactions && setTransactions([...transactions, formData.data]);
-        setToastState({
-          state: true,
-          text: "New transaction was added successfully.",
-          type: "success",
-        });
+        setToasts([
+          ...toasts,
+          {
+            state: true,
+            text: "New transaction was added successfully.",
+            type: "success",
+          },
+        ]);
       } else {
         const foundIndex = transactions
           ? transactions.findIndex((item) => item.id === transactionIdForEdit)
@@ -129,11 +132,14 @@ const NewTransactionModal = ({
             formData.data,
             ...transactions.slice(foundIndex + 1),
           ]);
-        setToastState({
-          state: true,
-          text: "Transaction was edited successfully.",
-          type: "success",
-        });
+        setToasts([
+          ...toasts,
+          {
+            state: true,
+            text: "Transaction was edited successfully.",
+            type: "success",
+          },
+        ]);
       }
       setIsOpen(false);
       setCategoryIsOpen(false);
