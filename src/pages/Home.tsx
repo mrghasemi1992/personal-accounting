@@ -6,6 +6,9 @@ import NewTransactionModal from "../components/NewTransactionModal";
 import Transactions from "../components/Transactions";
 
 import { Transaction } from "../interfaces";
+import sampleData from "../data/sampleData.json";
+
+import { ReactComponent as NoData } from "../assets/images/home/no-data.svg";
 
 const Home = () => {
   const [newTransactionIsOpen, setNewTransactionIsOpen] = useState(false);
@@ -41,6 +44,11 @@ const Home = () => {
   });
   const [transactionIdForEdit, setTransactionIdForEdit] = useState(0);
 
+  const handleImport = () => {
+    // @ts-ignore
+    setTransactions(sampleData);
+  };
+
   return (
     <>
       {transactions?.length ? (
@@ -52,7 +60,15 @@ const Home = () => {
           setTransactionIdForEdit={setTransactionIdForEdit}
         />
       ) : (
-        <></>
+        <div className="text-center mt-16">
+          <NoData className="w-[150px] h-[150px] mx-auto mb-4" />
+          <button
+            className="bg-gray-500 text-white px-4 py-2 rounded-md"
+            onClick={handleImport}
+          >
+            Import Sample Data
+          </button>
+        </div>
       )}
       <button
         className="fixed right-4 bottom-4 bg-blue-600 text-white px-4 py-2 rounded-md"
