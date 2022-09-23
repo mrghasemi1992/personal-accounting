@@ -20,7 +20,7 @@ const Reports = () => {
     datasets: [
       {
         data: [],
-        backgroundColor: ["#FF6384", "#36A2EB", "#FFCE56"],
+        backgroundColor: ["#EF4444", "#06B6D4", "#22C55E"],
       },
     ],
   };
