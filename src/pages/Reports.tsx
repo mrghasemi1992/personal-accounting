@@ -15,7 +15,10 @@ const Reports = () => {
     _.groupBy(transactions, (el) => el.category)
   );
 
-  let data = {
+  let data: {
+    labels: string[];
+    datasets: { data: number[]; backgroundColor: string[] }[];
+  } = {
     labels: [],
     datasets: [
       {
@@ -28,9 +31,7 @@ const Reports = () => {
   groupByCategory.forEach((item) => {
     let totalPrice = 0;
     item[1].forEach((transaction) => (totalPrice += Number(transaction.price)));
-    // @ts-ignore
     data.labels.push(item[0]);
-    // @ts-ignore
     data.datasets[0].data.push(totalPrice);
   });
 
@@ -63,6 +64,7 @@ const Reports = () => {
       </div>
       <hr className="my-8" />
       {data.labels.map((label, index) => (
+        // @ts-ignore
         <div
           key={index}
           className="flex justify-between max-w-xs mx-auto mb-2"
