@@ -3,6 +3,7 @@ import { Updater } from "use-immer";
 import { AnimatePresence, motion } from "framer-motion";
 
 import Modal from "./common/Modal";
+import { useToastContext } from "../App";
 
 import { Category, Transaction as TransactionIF } from "../interfaces";
 import useOnClickOutside from "../utils/useOnClickOutside";
@@ -44,6 +45,7 @@ const Transaction = ({
 }: Props) => {
   const [deleteModalIsOpen, setDeleteModal] = useState(false);
   const [moreItems, setMoreItems] = useState(false);
+  const { toasts, setToasts } = useToastContext();
 
   const handleEdit = (transaction: TransactionIF) => {
     setMoreItems(false);
@@ -67,6 +69,14 @@ const Transaction = ({
   const handleRemove = () => {
     setTransactions(transactions.filter((item) => item.id !== transaction.id));
     setDeleteModal(false);
+    setToasts([
+      ...toasts,
+      {
+        state: true,
+        text: "Transaction deleted.",
+        type: "error",
+      },
+    ]);
   };
 
   const handleIcon = (category: Category) => {

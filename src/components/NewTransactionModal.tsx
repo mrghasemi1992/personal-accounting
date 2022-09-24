@@ -11,6 +11,7 @@ import { Category, Transaction } from "../interfaces";
 import "react-datepicker/dist/react-datepicker.css";
 
 import { ReactComponent as CloseIcon } from "../assets/icons/common/close.svg";
+import { useToastContext } from "../App";
 
 type Props = {
   transactionIdForEdit?: number;
@@ -54,6 +55,7 @@ const NewTransactionModal = ({
   const [categoryIsOpen, setCategoryIsOpen] = useState(false);
   const [subCategoryIsOpen, setSubCategoryIsOpen] = useState(false);
   const [subCategoryList, setSubCategoryList] = useState<string[]>([]);
+  const { toasts, setToasts } = useToastContext();
 
   const resetForm = () => {
     setFormData((draft) => {
@@ -112,6 +114,14 @@ const NewTransactionModal = ({
     if (!handleErrors()) {
       if (!transactionIdForEdit) {
         transactions && setTransactions([...transactions, formData.data]);
+        setToasts([
+          ...toasts,
+          {
+            state: true,
+            text: "New transaction added.",
+            type: "success",
+          },
+        ]);
       } else {
         const foundIndex = transactions
           ? transactions.findIndex((item) => item.id === transactionIdForEdit)
@@ -122,6 +132,14 @@ const NewTransactionModal = ({
             formData.data,
             ...transactions.slice(foundIndex + 1),
           ]);
+        setToasts([
+          ...toasts,
+          {
+            state: true,
+            text: "Transaction edited.",
+            type: "success",
+          },
+        ]);
       }
       setIsOpen(false);
       setCategoryIsOpen(false);
