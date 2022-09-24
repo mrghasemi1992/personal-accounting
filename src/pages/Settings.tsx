@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+import { useToastContext } from "../App";
 import Modal from "../components/common/Modal";
 
 import sampleData from "../data/sampleData.json";
@@ -7,16 +8,33 @@ import sampleData from "../data/sampleData.json";
 const Settings = () => {
   const [importModalIsOpen, setImportModalIsOpen] = useState(false);
   const [deleteModalIsOpen, setDeleteModalIsOpen] = useState(false);
+  const { toasts, setToasts } = useToastContext();
 
   const handleImport = () => {
     localStorage.removeItem("transactions");
     localStorage.setItem("transactions", JSON.stringify(sampleData));
     setImportModalIsOpen(false);
+    setToasts([
+      ...toasts,
+      {
+        state: true,
+        text: "Transactions imported.",
+        type: "success",
+      },
+    ]);
   };
 
   const handleDeleteAll = () => {
     localStorage.removeItem("transactions");
     setDeleteModalIsOpen(false);
+    setToasts([
+      ...toasts,
+      {
+        state: true,
+        text: "Transactions deleted.",
+        type: "error",
+      },
+    ]);
   };
 
   return (

@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { useEffect } from "react";
 
 import { Toast as ToastIF } from "../../App";
@@ -15,15 +15,15 @@ type Props = {
 };
 
 const Toast = ({ isOpen, setToasts, text, type, index, toasts }: Props) => {
-  // const timer = setTimeout(() => {
-  //   setState({ state: false, text, type });
-  // }, 5000);
+  const timer = setTimeout(() => {
+    setToasts([...toasts.slice(0, index), ...toasts.slice(index + 1)]);
+  }, 5000);
 
-  // useEffect(() => {
-  //   return () => {
-  //     clearTimeout(timer);
-  //   };
-  // });
+  useEffect(() => {
+    return () => {
+      clearTimeout(timer);
+    };
+  });
 
   return (
     <>
@@ -44,9 +44,12 @@ const Toast = ({ isOpen, setToasts, text, type, index, toasts }: Props) => {
           <p className="mr-4 text-white">{text}</p>
           <CloseIcon
             className="text-white"
-            onClick={() =>
-              setToasts([...toasts.slice(0, index), ...toasts.slice(index + 1)])
-            }
+            onClick={() => {
+              setToasts([
+                ...toasts.slice(0, index),
+                ...toasts.slice(index + 1),
+              ]);
+            }}
           />
         </motion.div>
       )}

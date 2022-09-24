@@ -4,6 +4,7 @@ import { useImmer } from "use-immer";
 
 import NewTransactionModal from "../components/NewTransactionModal";
 import Transactions from "../components/Transactions";
+import { useToastContext } from "../App";
 
 import { Transaction } from "../interfaces";
 import sampleData from "../data/sampleData.json";
@@ -43,10 +44,19 @@ const Home = () => {
     },
   });
   const [transactionIdForEdit, setTransactionIdForEdit] = useState(0);
+  const { toasts, setToasts } = useToastContext();
 
   const handleImport = () => {
     // @ts-ignore
     setTransactions(sampleData);
+    setToasts([
+      ...toasts,
+      {
+        state: true,
+        text: "Transactions imported.",
+        type: "success",
+      },
+    ]);
   };
 
   return (

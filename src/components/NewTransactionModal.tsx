@@ -118,7 +118,7 @@ const NewTransactionModal = ({
           ...toasts,
           {
             state: true,
-            text: "New transaction was added successfully.",
+            text: "New transaction added.",
             type: "success",
           },
         ]);
@@ -136,7 +136,7 @@ const NewTransactionModal = ({
           ...toasts,
           {
             state: true,
-            text: "Transaction was edited successfully.",
+            text: "Transaction edited.",
             type: "success",
           },
         ]);
