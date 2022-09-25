@@ -68,9 +68,9 @@ const Dashboard = () => {
         rightButtonClassName="bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400"
         onSubmit={handleImport}
       >
-        <p className="text-red-500">
+        <p className="text-indigo-500">
           All previous data will be{" "}
-          <span className="border-b-red-400 inline-block border-b-2">
+          <span className="border-b-red-400 inline-block border-b-2 border-dashed">
             replaced by
           </span>{" "}
           the sample data. Are you sure?

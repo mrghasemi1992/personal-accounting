@@ -52,7 +52,7 @@ const Settings = () => {
       >
         <p className="text-indigo-500">
           All previous data will be{" "}
-          <span className="border-b-red-400 inline-block border-b-2">
+          <span className="border-b-red-400 inline-block border-b-2 border-dashed">
             replaced by
           </span>{" "}
           the sample data. Are you sure?
@@ -68,7 +68,7 @@ const Settings = () => {
       >
         <p className="text-indigo-500">
           Are you sure want to{" "}
-          <span className="border-b-red-400 inline-block border-b-2">
+          <span className="border-b-red-400 inline-block border-b-2 border-dashed">
             delete all
           </span>{" "}
           data?
