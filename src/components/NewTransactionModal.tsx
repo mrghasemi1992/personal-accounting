@@ -184,7 +184,7 @@ const NewTransactionModal = ({
             className="w-full rounded-xl outline-none p-4 my-4"
             placeholder="Description"
             type="text"
-            name="price"
+            name="description"
             value={formData.data.description}
             onChange={({ target: { value } }) =>
               setFormData((draft) => {
