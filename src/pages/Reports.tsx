@@ -76,14 +76,15 @@ const Reports = () => {
       </div>
       <hr className="my-8" />
       {data.labels.map((label, index) => (
-        // @ts-ignore
         <div
           key={index}
           className="flex justify-between max-w-xs mx-auto mb-2"
           style={{ color: data.datasets[0].backgroundColor[index] }}
         >
-          <p>{label}</p>
-          <p>${data.datasets[0].data[index].toLocaleString()}</p>
+          <p className="font-semibold">{label}</p>
+          <p className="font-semibold">
+            ${data.datasets[0].data[index].toLocaleString()}
+          </p>
         </div>
       ))}
     </div>
