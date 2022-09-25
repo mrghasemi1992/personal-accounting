@@ -49,7 +49,7 @@ const Summary = () => {
           <div>
             <p className="text-white">Expenses</p>
             <p className="text-white">
-              ${(totalExpenses * -1).toLocaleString()}
+              ${totalExpenses ? totalExpenses.toLocaleString() : 0}
             </p>
           </div>
         </div>
