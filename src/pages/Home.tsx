@@ -3,7 +3,7 @@ import { useLocalStorage } from "react-use";
 import { useImmer } from "use-immer";
 
 import NewTransactionModal from "../components/NewTransactionModal";
-import Transactions from "../components/Transactions";
+import Transactions from "../components/RTransactions";
 import { useToastContext } from "../App";
 
 import { Transaction } from "../interfaces";

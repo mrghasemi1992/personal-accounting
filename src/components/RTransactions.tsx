@@ -3,7 +3,7 @@ import moment from "moment";
 import { useEffect, useState } from "react";
 import { Updater } from "use-immer";
 
-import Transaction from "./Transaction";
+import Transaction from "./RTransaction";
 
 import { Transaction as TransactionIF } from "../interfaces";
 
