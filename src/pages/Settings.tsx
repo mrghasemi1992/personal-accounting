@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 import { useToastContext } from "../App";
 import Modal from "../components/common/Modal";
@@ -38,7 +39,11 @@ const Settings = () => {
   };
 
   return (
-    <>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
       <div className="flex flex-col p-4 gap-4">
         <button
           className="bg-gray-500 text-white px-4 py-2 rounded-md"
@@ -75,7 +80,7 @@ const Settings = () => {
       >
         <p className="text-red-500">Are you sure want to delete all data?</p>
       </Modal>
-    </>
+    </motion.div>
   );
 };
 

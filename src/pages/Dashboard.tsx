@@ -13,7 +13,7 @@ type Props = {};
 
 const Dashboard = ({}: Props) => {
   return (
-    <div className="p-6">
+    <div className="p-6 pb-32">
       <div className="text-right">
         <Link
           to="/settings"

@@ -30,3 +30,9 @@ body {
   font-family: Nunito, sans-serif;
   background-color: #f1f2f5;
 }
+
+.react-datepicker__tab-loop {
+  position: absolute;
+  top: 0;
+  left: 0;
+}

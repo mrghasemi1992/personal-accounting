@@ -49,7 +49,7 @@ const Transactions = ({}: Props) => {
   }, [transactions]);
 
   return (
-    <div className="p-6">
+    <div className="p-6 pb-32">
       <div className="bg-white rounded-xl w-10 h-10 flex items-center justify-center">
         <Link to="/" className="rounded-full bg-gray-400 p-1">
           <ArrowIcon className="text-white transform rotate-90" />

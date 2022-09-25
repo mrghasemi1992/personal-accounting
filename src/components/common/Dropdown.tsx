@@ -33,7 +33,7 @@ const Dropdown = ({
       <div
         className={`w-full ${
           disable ? "bg-gray-200" : "bg-white"
-        } border rounded-md border-gray-300 outline-none px-3 py-2 mt-2 mb-1 cursor-pointer flex justify-between items-center`}
+        } rounded-xl outline-none p-4 cursor-pointer flex justify-between items-center`}
         onClick={() => !disable && setIsOpen(!isOpen)}
       >
         {value ? (
@@ -55,13 +55,13 @@ const Dropdown = ({
         {isOpen && (
           <motion.div
             initial={{ y: -20, opacity: 0 }}
-            animate={{ y: 1, opacity: 1 }}
+            animate={{ y: 8, opacity: 1 }}
             exit={{ y: -20, opacity: 0 }}
             transition={{
               opacity: { duration: 0.2 },
               y: { duration: 0.3, type: "spring" },
             }}
-            className="absolute bg-white rounded-md shadow-md p-4 w-full flex flex-col gap-y-2 z-10 border border-gray-200"
+            className="absolute bg-white rounded-lg shadow-xl p-4 w-full flex flex-col gap-y-2 z-10"
           >
             {items.map((item, index) => (
               <p

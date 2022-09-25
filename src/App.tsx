@@ -4,7 +4,6 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Layout from "./components/Layout";
 import Transactions from "./pages/Transactions";
 import Dashboard from "./pages/Dashboard";
-import Home from "./pages/Home";
 import Reports from "./pages/Reports";
 import Settings from "./pages/Settings";
 

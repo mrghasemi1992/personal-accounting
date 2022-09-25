@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import ReactDatePicker from "react-datepicker";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { Updater } from "use-immer";
 
 import Dropdown from "./common/Dropdown";
@@ -180,88 +180,93 @@ const NewTransactionModal = ({
   }, [isOpen, setTransactionIdForEdit]);
 
   return (
-    <Modal
-      isOpen={isOpen}
-      setIsOpen={setIsOpen}
-      footer={false}
-      crossButton={false}
-      wrapperClassName="bg-white rounded-md mt-10 mx-4 p-4"
-    >
-      <motion.form onSubmit={handleSubmit}>
-        <CloseIcon className="ml-auto cursor-pointer" onClick={handleClose} />
-        <ReactDatePicker
-          onChange={(value) =>
-            setFormData((draft) => {
-              draft.data.date = value;
-            })
-          }
-          selected={formData.data.date}
-          className="w-full border rounded-md border-gray-300 outline-none px-3 py-2 mt-4 mb-1"
-          placeholderText="Date"
-        />
-        {formData.error.date && (
-          <p className="text-xs text-red-500">{formData.error.date}</p>
-        )}
-        <input
-          className="w-full border rounded-md border-gray-300 outline-none px-3 py-2 mt-2 mb-1"
-          placeholder="Price"
-          type="number"
-          value={formData.data.price}
-          onChange={({ target: { value } }) =>
-            setFormData((draft) => {
-              draft.data.price = value;
-            })
-          }
-          autoFocus
-        />
-        {formData.error.price && (
-          <p className="text-xs text-red-500">{formData.error.price}</p>
-        )}
-        <Dropdown
-          isOpen={categoryIsOpen}
-          setIsOpen={setCategoryIsOpen}
-          placeholder="Category"
-          items={["Food", "Transportation", "Bill"]}
-          value={formData.data.category}
-          setValue={(value: Category) =>
-            setFormData((draft) => {
-              draft.data.category = value;
-            })
-          }
-        />
-        {formData.error.category && (
-          <p className="text-xs text-red-500">{formData.error.category}</p>
-        )}
-        <Dropdown
-          isOpen={subCategoryIsOpen}
-          setIsOpen={setSubCategoryIsOpen}
-          placeholder="SubCategory"
-          items={subCategoryList}
-          value={formData.data.subCategory}
-          setValue={(value: string) =>
-            setFormData((draft) => {
-              draft.data.subCategory = value;
-            })
-          }
-          disable={!formData.data.category}
-        />
-        <input
-          className="w-full border rounded-md border-gray-300 outline-none px-3 py-2 mt-2 mb-1"
-          placeholder="Description"
-          type="text"
-          name="price"
-          value={formData.data.description}
-          onChange={({ target: { value } }) =>
-            setFormData((draft) => {
-              draft.data.description = value;
-            })
-          }
-        />
-        <button className="bg-blue-600 text-white w-full px-8 py-2 rounded-md mt-6 mb-2">
-          {transactionIdForEdit ? "Edit" : "Submit"}
-        </button>
-      </motion.form>
-    </Modal>
+    <AnimatePresence>
+      {isOpen && (
+        <motion.form
+          initial={{ opacity: 0, x: -500 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: -500 }}
+          onSubmit={handleSubmit}
+          className="bg-cultured p-8 fixed inset-0 flex flex-col gap-y-4"
+        >
+          <CloseIcon
+            className="ml-auto cursor-pointer w-8 h-8 text-gray-500 mb-4"
+            onClick={handleClose}
+          />
+          <ReactDatePicker
+            onChange={(value) =>
+              setFormData((draft) => {
+                draft.data.date = value;
+              })
+            }
+            selected={formData.data.date}
+            className="w-full rounded-xl outline-none p-4"
+            placeholderText="Date"
+          />
+          {formData.error.date && (
+            <p className="text-xs text-red-500">{formData.error.date}</p>
+          )}
+          <input
+            className="w-full rounded-xl outline-none p-4"
+            placeholder="Price"
+            type="number"
+            value={formData.data.price}
+            onChange={({ target: { value } }) =>
+              setFormData((draft) => {
+                draft.data.price = value;
+              })
+            }
+            autoFocus
+          />
+          {formData.error.price && (
+            <p className="text-xs text-red-500">{formData.error.price}</p>
+          )}
+          <Dropdown
+            isOpen={categoryIsOpen}
+            setIsOpen={setCategoryIsOpen}
+            placeholder="Category"
+            items={["Food", "Transportation", "Bill"]}
+            value={formData.data.category}
+            setValue={(value: Category) =>
+              setFormData((draft) => {
+                draft.data.category = value;
+              })
+            }
+          />
+          {formData.error.category && (
+            <p className="text-xs text-red-500">{formData.error.category}</p>
+          )}
+          <Dropdown
+            isOpen={subCategoryIsOpen}
+            setIsOpen={setSubCategoryIsOpen}
+            placeholder="SubCategory"
+            items={subCategoryList}
+            value={formData.data.subCategory}
+            setValue={(value: string) =>
+              setFormData((draft) => {
+                draft.data.subCategory = value;
+              })
+            }
+            disable={!formData.data.category}
+          />
+          <input
+            className="w-full rounded-xl outline-none p-4"
+            placeholder="Description"
+            type="text"
+            name="price"
+            value={formData.data.description}
+            onChange={({ target: { value } }) =>
+              setFormData((draft) => {
+                draft.data.description = value;
+              })
+            }
+          />
+          <button className="bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 text-white w-full h-14 rounded-xl mt-auto font-semibold text-lg">
+            {transactionIdForEdit ? "Edit" : "Submit"}
+          </button>
+        </motion.form>
+      )}
+    </AnimatePresence>
   );
 };
 
