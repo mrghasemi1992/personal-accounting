@@ -26,16 +26,17 @@ const Settings = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
+      className="p-6"
     >
-      <div className="flex flex-col p-4 gap-4">
+      <div className="flex flex-col gap-y-4">
         <button
-          className="bg-gray-500 text-white px-4 py-2 rounded-md"
+          className="bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 text-white px-4 py-3 rounded-xl"
           onClick={() => setImportModalIsOpen(true)}
         >
           Import Sample Data
         </button>
         <button
-          className="bg-red-500 text-white px-4 py-2 rounded-md"
+          className="bg-gradient-to-l from-red-300 to-red-600 text-white px-4 py-3 rounded-xl"
           onClick={() => setDeleteModalIsOpen(true)}
         >
           Remove All Data
@@ -46,11 +47,15 @@ const Settings = () => {
         isOpen={importModalIsOpen}
         setIsOpen={setImportModalIsOpen}
         rightButtonText="Import"
-        rightButtonClassName="bg-red-500"
+        rightButtonClassName="bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400"
         onSubmit={handleImport}
       >
-        <p className="text-red-500">
-          All previous data will be replaced by the sample data. Are you sure?
+        <p className="text-indigo-500">
+          All previous data will be{" "}
+          <span className="border-b-red-400 inline-block border-b-2">
+            replaced by
+          </span>{" "}
+          the sample data. Are you sure?
         </p>
       </Modal>
 
@@ -58,10 +63,16 @@ const Settings = () => {
         isOpen={deleteModalIsOpen}
         setIsOpen={setDeleteModalIsOpen}
         rightButtonText="Delete all"
-        rightButtonClassName="bg-red-500"
+        rightButtonClassName="bg-gradient-to-l from-red-300 to-red-600"
         onSubmit={handleDeleteAll}
       >
-        <p className="text-red-500">Are you sure want to delete all data?</p>
+        <p className="text-indigo-500">
+          Are you sure want to{" "}
+          <span className="border-b-red-400 inline-block border-b-2">
+            delete all
+          </span>{" "}
+          data?
+        </p>
       </Modal>
     </motion.div>
   );
