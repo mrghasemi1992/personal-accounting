@@ -2,6 +2,8 @@ import { createContext, useContext, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import Layout from "./components/Layout";
+import Transactions from "./pages/Transactions";
+import Dashboard from "./pages/Dashboard";
 import Home from "./pages/Home";
 import Reports from "./pages/Reports";
 import Settings from "./pages/Settings";
@@ -34,7 +36,8 @@ const App = () => {
       <ToastContext.Provider value={{ toasts, setToasts }}>
         <Layout>
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/transactions" element={<Transactions />} />
             <Route path="/settings" element={<Settings />} />
             <Route path="/reports" element={<Reports />} />
           </Routes>

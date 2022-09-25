@@ -6,6 +6,7 @@ import { useToastContext } from "../../App";
 import Toast from "../common/Toast";
 
 import Header from "./Header";
+import Navbar from "./Navbar";
 
 type Props = { children: ReactNode };
 
@@ -14,8 +15,8 @@ const Layout = ({ children }: Props) => {
 
   return (
     <>
-      <Header />
       <main>{children}</main>
+      <Navbar />
       <AnimatePresence>
         {toasts.map((toast, index) => (
           <Toast
