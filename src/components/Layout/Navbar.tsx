@@ -4,9 +4,11 @@ import { ReactComponent as PlusIcon } from "../../assets/icons/common/plus.svg";
 import { Link } from "react-router-dom";
 import NewTransactionModal from "../NewTransactionModal";
 import { useState } from "react";
+import { useTransactionStore } from "../../stores/transactionStore";
 
 const Navbar = () => {
   const [newTransactionIsOpen, setNewTransactionIsOpen] = useState(false);
+  const { transactions } = useTransactionStore();
 
   return (
     <>
@@ -23,8 +25,12 @@ const Navbar = () => {
         >
           <PlusIcon className="text-white w-12 h-12" />
         </div>
-        <Link to="/reports">
-          <BarChartIcon className="scale-125 text-gray-400" />
+        <Link to={transactions.length ? "/reports" : "/"}>
+          <BarChartIcon
+            className={`scale-125 ${
+              transactions.length ? "text-gray-400" : "text-gray-300"
+            }`}
+          />
         </Link>
       </div>
 
