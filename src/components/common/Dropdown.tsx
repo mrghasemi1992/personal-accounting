@@ -13,6 +13,7 @@ type Props = {
   value: any;
   setValue: any;
   disable?: boolean;
+  className?: string;
 };
 
 const Dropdown = ({
@@ -23,6 +24,7 @@ const Dropdown = ({
   setValue,
   value,
   disable,
+  className,
 }: Props) => {
   const dropdownRef = useRef(null);
 
@@ -33,7 +35,9 @@ const Dropdown = ({
       <div
         className={`w-full ${
           disable ? "bg-gray-200" : "bg-white"
-        } rounded-xl outline-none p-4 cursor-pointer flex justify-between items-center`}
+        } rounded-xl outline-none p-4 cursor-pointer flex justify-between items-center ${
+          className ? className : ""
+        }`}
         onClick={() => !disable && setIsOpen(!isOpen)}
       >
         {value ? (
