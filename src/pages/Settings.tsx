@@ -1,41 +1,24 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-import { useToastContext } from "../App";
 import Modal from "../components/common/Modal";
 
-import sampleData from "../data/sampleData.json";
+import { useTransactionStore } from "../stores/transactionStore";
 
 const Settings = () => {
   const [importModalIsOpen, setImportModalIsOpen] = useState(false);
   const [deleteModalIsOpen, setDeleteModalIsOpen] = useState(false);
-  const { toasts, setToasts } = useToastContext();
+  const { removeAll, importSample } = useTransactionStore();
 
   const handleImport = () => {
-    localStorage.removeItem("transactions");
-    localStorage.setItem("transactions", JSON.stringify(sampleData));
+    removeAll();
+    importSample();
     setImportModalIsOpen(false);
-    setToasts([
-      ...toasts,
-      {
-        state: true,
-        text: "Transactions imported.",
-        type: "success",
-      },
-    ]);
   };
 
   const handleDeleteAll = () => {
-    localStorage.removeItem("transactions");
+    removeAll();
     setDeleteModalIsOpen(false);
-    setToasts([
-      ...toasts,
-      {
-        state: true,
-        text: "Transactions deleted.",
-        type: "error",
-      },
-    ]);
   };
 
   return (

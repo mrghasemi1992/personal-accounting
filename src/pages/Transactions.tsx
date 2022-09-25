@@ -1,25 +1,15 @@
-import moment from "moment";
 import { useEffect, useState } from "react";
 import _ from "underscore";
-
-import TransactionCard from "../components/common/TransactionCard";
 
 import { Transaction as TransactionIF } from "../interfaces";
 
 import { ReactComponent as ArrowIcon } from "../assets/icons/common/arrow.svg";
 import { Link } from "react-router-dom";
+import { useTransactionStore } from "../stores/transactionStore";
+import TransactionCard from "../components/common/TransactionCard";
 
-const handleDate = (date: string) => {
-  const now = new Date().toISOString().split("T")[0];
-  if (date === now) return "today";
-  else return moment(date).fromNow();
-};
-
-type Props = {};
-
-const Transactions = ({}: Props) => {
-  /* @ts-ignore */
-  const transactions = JSON.parse(localStorage.getItem("transactions"));
+const Transactions = () => {
+  const { transactions } = useTransactionStore();
   const [dates, setDates] = useState<string[]>([]);
   const [groupedTransactions, setGroupedTransactions] = useState<
     TransactionIF[][]
@@ -58,7 +48,7 @@ const Transactions = ({}: Props) => {
       {dates.map((date, j) => (
         <>
           <div className="mt-8 mb-4" key={j}>
-            {handleDate(date)}
+            {date}
           </div>
           <div className="flex flex-col gap-y-6">
             {groupedTransactions[j].map((transaction, index) => (

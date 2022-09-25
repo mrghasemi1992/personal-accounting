@@ -1,77 +1,67 @@
 import { useEffect, useState } from "react";
 import ReactDatePicker from "react-datepicker";
 import { AnimatePresence, motion } from "framer-motion";
-import { Updater } from "use-immer";
+import { useImmer } from "use-immer";
 
 import Dropdown from "./common/Dropdown";
-import Modal from "./common/Modal";
 
-import { Category, Transaction } from "../interfaces";
+import { Category, NewTransaction } from "../interfaces";
 
 import "react-datepicker/dist/react-datepicker.css";
 
 import { ReactComponent as CloseIcon } from "../assets/icons/common/close.svg";
-import { useToastContext } from "../App";
+import { useTransactionStore } from "../stores/transactionStore";
 
 type Props = {
   transactionIdForEdit?: number;
   isOpen: boolean;
   setIsOpen: (state: boolean) => void;
-  setTransactions: (transactions: Transaction[]) => void;
-  transactions: Transaction[] | undefined;
-  formData: {
-    data: Transaction;
-    error: {
-      date: string;
-      price: string;
-      category: string;
-      subCategory: string;
-      description: string;
-    };
-  };
-  setFormData: Updater<{
-    data: Transaction;
-    error: {
-      date: string;
-      price: string;
-      category: string;
-      subCategory: string;
-      description: string;
-    };
-  }>;
-  setTransactionIdForEdit: (state: number) => void;
 };
 
 const NewTransactionModal = ({
   isOpen,
   setIsOpen,
-  setTransactions,
-  transactions,
-  formData,
-  setFormData,
   transactionIdForEdit,
-  setTransactionIdForEdit,
 }: Props) => {
   const [categoryIsOpen, setCategoryIsOpen] = useState(false);
-  const [subCategoryIsOpen, setSubCategoryIsOpen] = useState(false);
-  const [subCategoryList, setSubCategoryList] = useState<string[]>([]);
-  const { toasts, setToasts } = useToastContext();
+  const [formData, setFormData] = useImmer<{
+    data: NewTransaction;
+    error: {
+      date: string;
+      amount: string;
+      category: string;
+      description: string;
+    };
+  }>({
+    data: {
+      id: Date.now(),
+      date: new Date(),
+      amount: "",
+      category: "",
+      description: "",
+    },
+    error: {
+      date: "",
+      amount: "",
+      category: "",
+      description: "",
+    },
+  });
+  const { add } = useTransactionStore();
 
   const resetForm = () => {
     setFormData((draft) => {
       draft.data = {
         id: Date.now(),
         date: new Date(),
-        price: "",
+        amount: "",
         category: "",
-        subCategory: "",
         description: "",
       };
       draft.error = {
         date: "",
-        price: "",
+        amount: "",
         category: "",
-        subCategory: "",
         description: "",
       };
     });
@@ -81,7 +71,6 @@ const NewTransactionModal = ({
     setIsOpen(false);
     resetForm();
     setCategoryIsOpen(false);
-    setSubCategoryIsOpen(false);
   };
 
   const handleErrors = () => {
@@ -93,9 +82,9 @@ const NewTransactionModal = ({
       });
       errorFlag = true;
     }
-    if (!formData.data.price) {
+    if (!formData.data.amount) {
       setFormData((draft) => {
-        draft.error.price = "Price is required!";
+        draft.error.amount = "Price is required!";
       });
       errorFlag = true;
     }
@@ -113,79 +102,31 @@ const NewTransactionModal = ({
     e.preventDefault();
     if (!handleErrors()) {
       if (!transactionIdForEdit) {
-        transactions && setTransactions([...transactions, formData.data]);
-        setToasts([
-          ...toasts,
-          {
-            state: true,
-            text: "New transaction added.",
-            type: "success",
-          },
-        ]);
-      } else {
-        const foundIndex = transactions
-          ? transactions.findIndex((item) => item.id === transactionIdForEdit)
-          : -1;
-        transactions &&
-          setTransactions([
-            ...transactions.slice(0, foundIndex),
-            formData.data,
-            ...transactions.slice(foundIndex + 1),
-          ]);
-        setToasts([
-          ...toasts,
-          {
-            state: true,
-            text: "Transaction edited.",
-            type: "success",
-          },
-        ]);
+        formData.data.date &&
+          add({
+            ...formData.data,
+            date: formData.data.date.toISOString(),
+            amount: String(Number(formData.data.amount) * -1),
+          });
       }
       setIsOpen(false);
       setCategoryIsOpen(false);
-      setSubCategoryIsOpen(false);
       resetForm();
     }
   };
-
-  const handleSubCategoryItems = (item: string) => {
-    switch (item) {
-      case "Food":
-        return setSubCategoryList(["Restaurant", "Supermarket"]);
-      case "Transportation":
-        return setSubCategoryList(["Taxi", "Metro", "Bus"]);
-      case "Bill":
-        return setSubCategoryList([
-          "Water",
-          "Electric",
-          "Gas",
-          "Tel",
-          "Internet",
-          "Cell Phone",
-        ]);
-    }
-  };
-
-  useEffect(() => {
-    handleSubCategoryItems(formData.data.category);
-  }, [formData.data.category]);
 
   useEffect(() => {
     if (isOpen) document.body.style.overflow = "hidden";
     else document.body.style.overflow = "";
   }, [isOpen]);
 
-  useEffect(() => {
-    if (!isOpen) setTransactionIdForEdit(0);
-  }, [isOpen, setTransactionIdForEdit]);
-
   return (
     <AnimatePresence>
       {isOpen && (
         <motion.form
-          initial={{ opacity: 0, x: -500 }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: -500 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
           onSubmit={handleSubmit}
           className="bg-cultured p-8 fixed inset-0 flex flex-col gap-y-4"
         >
@@ -210,16 +151,16 @@ const NewTransactionModal = ({
             className="w-full rounded-xl outline-none p-4"
             placeholder="Price"
             type="number"
-            value={formData.data.price}
+            value={formData.data.amount}
             onChange={({ target: { value } }) =>
               setFormData((draft) => {
-                draft.data.price = value;
+                draft.data.amount = value;
               })
             }
             autoFocus
           />
-          {formData.error.price && (
-            <p className="text-xs text-red-500">{formData.error.price}</p>
+          {formData.error.amount && (
+            <p className="text-xs text-red-500">{formData.error.amount}</p>
           )}
           <Dropdown
             isOpen={categoryIsOpen}
@@ -236,19 +177,6 @@ const NewTransactionModal = ({
           {formData.error.category && (
             <p className="text-xs text-red-500">{formData.error.category}</p>
           )}
-          <Dropdown
-            isOpen={subCategoryIsOpen}
-            setIsOpen={setSubCategoryIsOpen}
-            placeholder="SubCategory"
-            items={subCategoryList}
-            value={formData.data.subCategory}
-            setValue={(value: string) =>
-              setFormData((draft) => {
-                draft.data.subCategory = value;
-              })
-            }
-            disable={!formData.data.category}
-          />
           <input
             className="w-full rounded-xl outline-none p-4"
             placeholder="Description"

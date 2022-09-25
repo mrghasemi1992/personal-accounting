@@ -1,5 +1,3 @@
-import moment from "moment";
-
 import { Category, Transaction } from "../../interfaces";
 
 import { ReactComponent as EggFriedIcon } from "../../assets/icons/common/egg-fried.svg";
@@ -30,7 +28,9 @@ const TransactionCard = ({ transaction, showDate = true }: Props) => {
           </div>
         );
       default:
-        return <></>;
+        return (
+          <div className="h-14 w-14 bg-gradient-to-t from-cyan-600 to-cyan-300 rounded-full flex justify-center items-center"></div>
+        );
     }
   };
 
@@ -43,10 +43,12 @@ const TransactionCard = ({ transaction, showDate = true }: Props) => {
         </div>
       </div>
       <div>
-        <div className="text-gray-500">${transaction.price}</div>
+        <div className="text-gray-500">
+          ${Number(transaction.amount).toLocaleString()}
+        </div>
         {showDate && (
           <div className="text-gray-400 text-sm">
-            {moment(transaction.date).fromNow()}
+            {String(transaction.date).split("T")[0]}
           </div>
         )}
       </div>

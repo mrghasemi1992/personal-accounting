@@ -1,19 +1,19 @@
-import moment from "moment";
-
 import Summary from "../components/pages/dashboard/Summary";
 
-import { Category, Transaction } from "../interfaces";
+import { Transaction } from "../interfaces";
 
 import { ReactComponent as GearIcon } from "../assets/icons/common/gear.svg";
 
 import { Link } from "react-router-dom";
 import TransactionCard from "../components/common/TransactionCard";
+import { useTransactionStore } from "../stores/transactionStore";
 
-type Props = {};
+const Dashboard = () => {
+  const { transactions } = useTransactionStore();
 
-const Dashboard = ({}: Props) => {
   return (
     <div className="p-6 pb-32">
+      <div className="flex gap-x-4"></div>
       <div className="text-right">
         <Link
           to="/settings"
@@ -31,12 +31,9 @@ const Dashboard = ({}: Props) => {
         </Link>
       </div>
       <div className="gap-y-6 flex flex-col">
-        {/* @ts-ignore */}
-        {JSON.parse(localStorage.getItem("transactions"))
-          .slice(0, 10)
-          .map((transaction: Transaction) => (
-            <TransactionCard transaction={transaction} />
-          ))}
+        {transactions.slice(0, 10).map((transaction: Transaction) => (
+          <TransactionCard transaction={transaction} />
+        ))}
       </div>
     </div>
   );

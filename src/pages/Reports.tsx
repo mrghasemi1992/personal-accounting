@@ -2,14 +2,12 @@ import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
 import _ from "underscore";
 
-import { Transaction } from "../interfaces";
+import { useTransactionStore } from "../stores/transactionStore";
 
 const Reports = () => {
   ChartJS.register(ArcElement, Tooltip, Legend);
 
-  const transactions: Transaction[] = JSON.parse(
-    localStorage.getItem("transactions") || ""
-  );
+  const { transactions } = useTransactionStore();
 
   const groupByCategory = Object.entries(
     _.groupBy(transactions, (el) => el.category)
@@ -23,20 +21,34 @@ const Reports = () => {
     datasets: [
       {
         data: [],
-        backgroundColor: ["#EF4444", "#06B6D4", "#22C55E"],
+        backgroundColor: [
+          "#EF4444",
+          "#06B6D4",
+          "#22C55E",
+          "#71717A",
+          "#F97316",
+          "#06B6D4",
+          "#6366F1",
+          "#EC4899",
+          "#D946EF",
+          "#14B8A6",
+          "#10B981",
+        ],
       },
     ],
   };
 
   groupByCategory.forEach((item) => {
     let totalPrice = 0;
-    item[1].forEach((transaction) => (totalPrice += Number(transaction.price)));
+    item[1].forEach(
+      (transaction) => (totalPrice += Number(transaction.amount))
+    );
     data.labels.push(item[0]);
     data.datasets[0].data.push(totalPrice);
   });
 
   return (
-    <div>
+    <div className="pb-32">
       <div className="flex gap-x-4 justify-center overflow-x-scroll mb-8 bg-gray-500 text-white px-4 py-2">
         {[
           // "April",
@@ -71,7 +83,7 @@ const Reports = () => {
           style={{ color: data.datasets[0].backgroundColor[index] }}
         >
           <p>{label}</p>
-          <p>${data.datasets[0].data[index]}</p>
+          <p>${data.datasets[0].data[index].toLocaleString()}</p>
         </div>
       ))}
     </div>
