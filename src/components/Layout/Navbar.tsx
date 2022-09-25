@@ -3,46 +3,12 @@ import { ReactComponent as BarChartIcon } from "../../assets/icons/common/bar-ch
 import { ReactComponent as PlusIcon } from "../../assets/icons/common/plus.svg";
 import { Link } from "react-router-dom";
 import NewTransactionModal from "../NewTransactionModal";
-import { Transaction } from "../../interfaces";
-import { useImmer } from "use-immer";
-import { useLocalStorage } from "react-use";
 import { useState } from "react";
+import { useTransactionStore } from "../../stores/transactionStore";
 
-type Props = {};
-
-const Navbar = ({}: Props) => {
+const Navbar = () => {
   const [newTransactionIsOpen, setNewTransactionIsOpen] = useState(false);
-  const [transactions, setTransactions] = useLocalStorage<Transaction[]>(
-    "transactions",
-    []
-  );
-  const [formData, setFormData] = useImmer<{
-    data: Transaction;
-    error: {
-      date: string;
-      price: string;
-      category: string;
-      subCategory: string;
-      description: string;
-    };
-  }>({
-    data: {
-      id: Date.now(),
-      date: new Date(),
-      price: "",
-      category: "",
-      subCategory: "",
-      description: "",
-    },
-    error: {
-      date: "",
-      price: "",
-      category: "",
-      subCategory: "",
-      description: "",
-    },
-  });
-  const [transactionIdForEdit, setTransactionIdForEdit] = useState(0);
+  const { transactions } = useTransactionStore();
 
   return (
     <>
@@ -59,20 +25,18 @@ const Navbar = ({}: Props) => {
         >
           <PlusIcon className="text-white w-12 h-12" />
         </div>
-        <Link to="/reports">
-          <BarChartIcon className="scale-125 text-gray-400" />
+        <Link to={transactions.length ? "/reports" : "/"}>
+          <BarChartIcon
+            className={`scale-125 ${
+              transactions.length ? "text-gray-400" : "text-gray-300"
+            }`}
+          />
         </Link>
       </div>
 
       <NewTransactionModal
-        formData={formData}
         isOpen={newTransactionIsOpen}
-        setFormData={setFormData}
         setIsOpen={setNewTransactionIsOpen}
-        transactions={transactions}
-        setTransactions={setTransactions}
-        transactionIdForEdit={transactionIdForEdit}
-        setTransactionIdForEdit={setTransactionIdForEdit}
       />
     </>
   );

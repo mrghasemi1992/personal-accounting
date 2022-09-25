@@ -1,9 +1,13 @@
 import { motion } from "framer-motion";
 import { useEffect } from "react";
 
-import { Toast as ToastIF } from "../../App";
-
 import { ReactComponent as CloseIcon } from "../../assets/icons/common/close.svg";
+
+export type ToastIF = {
+  state: boolean;
+  text: string;
+  type: "success" | "error";
+};
 
 type Props = {
   isOpen: boolean;

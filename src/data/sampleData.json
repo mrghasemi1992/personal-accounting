@@ -1,282 +1,1094 @@
 [
   {
     "id": 1,
-    "date": "2022-09-16T16:21:12.137Z",
-    "category": "Food",
-    "subCategory": "Supermarket",
-    "description": "Hypermarket",
-    "price": 100
+    "amount": -37,
+    "date": "2022-09-24T11:00:00.000Z",
+    "category": "Charity",
+    "description": ""
   },
   {
     "id": 2,
-    "date": "2022-09-16T16:21:12.137Z",
-    "category": "Food",
-    "subCategory": "Restaurant",
-    "description": "Burger King",
-    "price": 25
+    "amount": -76,
+    "date": "2022-09-24T11:00:00.000Z",
+    "category": "Insurance",
+    "description": ""
   },
   {
     "id": 3,
-    "date": "2022-09-16T16:21:12.137Z",
-    "category": "Transportation",
-    "subCategory": "Metro",
-    "description": "",
-    "price": 10
+    "amount": -133,
+    "date": "2022-09-24T11:00:00.000Z",
+    "category": "Buy",
+    "description": ""
   },
   {
     "id": 4,
-    "date": "2022-09-16T16:21:12.137Z",
-    "category": "Transportation",
-    "subCategory": "Bus",
-    "description": "",
-    "price": 1
+    "amount": -124,
+    "date": "2022-09-24T11:00:00.000Z",
+    "category": "Food",
+    "description": "Burger King"
   },
   {
     "id": 5,
-    "date": "2022-09-16T16:21:12.137Z",
-    "category": "Transportation",
-    "subCategory": "Taxi",
-    "description": "",
-    "price": 15
+    "amount": -57,
+    "date": "2022-09-24T11:00:00.000Z",
+    "category": "Food",
+    "description": "Burger King"
   },
   {
     "id": 6,
-    "date": "2022-09-15T16:21:12.137Z",
-    "category": "Bill",
-    "subCategory": "Water",
-    "description": "",
-    "price": 50
+    "amount": -50,
+    "date": "2022-09-23T11:00:00.000Z",
+    "category": "Car",
+    "description": ""
   },
   {
     "id": 7,
-    "date": "2022-09-15T16:21:12.137Z",
+    "amount": -23,
+    "date": "2022-09-23T11:00:00.000Z",
     "category": "Bill",
-    "subCategory": "Gas",
-    "description": "",
-    "price": 100
+    "description": ""
   },
   {
     "id": 8,
-    "date": "2022-09-15T16:21:12.137Z",
-    "category": "Bill",
-    "subCategory": "Electricity",
-    "description": "",
-    "price": 100
+    "amount": -128,
+    "date": "2022-09-23T11:00:00.000Z",
+    "category": "Entertainment",
+    "description": ""
   },
   {
     "id": 9,
-    "date": "2022-09-15T16:21:12.137Z",
-    "category": "Bill",
-    "subCategory": "Cell Phone",
-    "description": "",
-    "price": 200
+    "amount": -156,
+    "date": "2022-09-23T11:00:00.000Z",
+    "category": "Travel",
+    "description": ""
   },
   {
     "id": 10,
-    "date": "2022-09-15T16:21:12.137Z",
-    "category": "Bill",
-    "subCategory": "Tel",
-    "description": "",
-    "price": 25
+    "amount": -13,
+    "date": "2022-09-23T11:00:00.000Z",
+    "category": "Entertainment",
+    "description": ""
   },
   {
     "id": 11,
-    "date": "2022-09-14T16:21:12.137Z",
-    "category": "Food",
-    "subCategory": "Supermarket",
-    "description": "Hypermarket",
-    "price": 85
+    "amount": -140,
+    "date": "2022-09-22T11:00:00.000Z",
+    "category": "Insurance",
+    "description": ""
   },
   {
     "id": 12,
-    "date": "2022-09-14T16:21:12.137Z",
+    "amount": -150,
+    "date": "2022-09-22T11:00:00.000Z",
     "category": "Food",
-    "subCategory": "Restaurant",
-    "description": "Burger King",
-    "price": 25
+    "description": "Burger King"
   },
   {
     "id": 13,
-    "date": "2022-09-14T16:21:12.137Z",
-    "category": "Transportation",
-    "subCategory": "Metro",
-    "description": "",
-    "price": 10
+    "amount": -191,
+    "date": "2022-09-22T11:00:00.000Z",
+    "category": "Car",
+    "description": ""
   },
   {
     "id": 14,
-    "date": "2022-09-14T16:21:12.137Z",
-    "category": "Transportation",
-    "subCategory": "Bus",
-    "description": "",
-    "price": 1
+    "amount": -104,
+    "date": "2022-09-22T11:00:00.000Z",
+    "category": "Car",
+    "description": ""
   },
   {
     "id": 15,
-    "date": "2022-09-14T16:21:12.137Z",
-    "category": "Transportation",
-    "subCategory": "Taxi",
-    "description": "",
-    "price": 15
+    "amount": -33,
+    "date": "2022-09-22T11:00:00.000Z",
+    "category": "Charity",
+    "description": ""
   },
   {
     "id": 16,
-    "date": "2022-09-13T16:21:12.137Z",
+    "amount": -133,
+    "date": "2022-09-21T11:00:00.000Z",
     "category": "Food",
-    "subCategory": "Supermarket",
-    "description": "Hypermarket",
-    "price": 85
+    "description": "Burger King"
   },
   {
     "id": 17,
-    "date": "2022-09-13T16:21:12.137Z",
-    "category": "Food",
-    "subCategory": "Restaurant",
-    "description": "Burger King",
-    "price": 25
+    "amount": -62,
+    "date": "2022-09-21T11:00:00.000Z",
+    "category": "Bill",
+    "description": ""
   },
   {
     "id": 18,
-    "date": "2022-09-13T16:21:12.137Z",
-    "category": "Transportation",
-    "subCategory": "Metro",
-    "description": "",
-    "price": 10
+    "amount": -47,
+    "date": "2022-09-21T11:00:00.000Z",
+    "category": "Bill",
+    "description": ""
   },
   {
     "id": 19,
-    "date": "2022-09-13T16:21:12.137Z",
-    "category": "Transportation",
-    "subCategory": "Bus",
-    "description": "",
-    "price": 1
+    "amount": -158,
+    "date": "2022-09-21T11:00:00.000Z",
+    "category": "Food",
+    "description": "Burger King"
   },
   {
     "id": 20,
-    "date": "2022-09-13T16:21:12.137Z",
-    "category": "Transportation",
-    "subCategory": "Taxi",
-    "description": "",
-    "price": 15
+    "amount": -133,
+    "date": "2022-09-21T11:00:00.000Z",
+    "category": "Health",
+    "description": ""
   },
   {
     "id": 21,
-    "date": "2022-08-16T16:21:12.137Z",
-    "category": "Bill",
-    "subCategory": "Water",
-    "description": "",
-    "price": 50
+    "amount": -200,
+    "date": "2022-09-21T11:00:00.000Z",
+    "category": "Car",
+    "description": ""
   },
   {
     "id": 22,
-    "date": "2022-08-16T16:21:12.137Z",
-    "category": "Bill",
-    "subCategory": "Gas",
-    "description": "",
-    "price": 100
+    "amount": -114,
+    "date": "2022-09-21T11:00:00.000Z",
+    "category": "Travel",
+    "description": ""
   },
   {
     "id": 23,
-    "date": "2022-08-16T16:21:12.137Z",
-    "category": "Bill",
-    "subCategory": "Electricity",
-    "description": "",
-    "price": 100
+    "amount": -83,
+    "date": "2022-09-20T11:00:00.000Z",
+    "category": "Health",
+    "description": ""
   },
   {
     "id": 24,
-    "date": "2022-08-16T16:21:12.137Z",
-    "category": "Bill",
-    "subCategory": "Cell Phone",
-    "description": "",
-    "price": 200
+    "amount": -178,
+    "date": "2022-09-20T11:00:00.000Z",
+    "category": "Travel",
+    "description": ""
   },
   {
     "id": 25,
-    "date": "2022-08-16T16:21:12.137Z",
-    "category": "Bill",
-    "subCategory": "Tel",
-    "description": "",
-    "price": 25
+    "amount": -133,
+    "date": "2022-09-20T11:00:00.000Z",
+    "category": "Buy",
+    "description": ""
   },
   {
     "id": 26,
-    "date": "2022-08-15T16:21:12.137Z",
-    "category": "Food",
-    "subCategory": "Supermarket",
-    "description": "Hypermarket",
-    "price": 85
+    "amount": -70,
+    "date": "2022-09-20T11:00:00.000Z",
+    "category": "Transportation",
+    "description": ""
   },
   {
     "id": 27,
-    "date": "2022-08-15T16:21:12.137Z",
-    "category": "Food",
-    "subCategory": "Restaurant",
-    "description": "Burger King",
-    "price": 25
+    "amount": -76,
+    "date": "2022-09-20T11:00:00.000Z",
+    "category": "Entertainment",
+    "description": ""
   },
   {
     "id": 28,
-    "date": "2022-08-15T16:21:12.137Z",
-    "category": "Transportation",
-    "subCategory": "Metro",
-    "description": "",
-    "price": 10
+    "amount": -129,
+    "date": "2022-09-20T11:00:00.000Z",
+    "category": "Car",
+    "description": ""
   },
   {
     "id": 29,
-    "date": "2022-08-15T16:21:12.137Z",
+    "amount": -77,
+    "date": "2022-09-19T11:00:00.000Z",
     "category": "Transportation",
-    "subCategory": "Bus",
-    "description": "",
-    "price": 1
+    "description": ""
   },
   {
     "id": 30,
-    "date": "2022-08-15T16:21:12.137Z",
-    "category": "Transportation",
-    "subCategory": "Taxi",
-    "description": "",
-    "price": 15
+    "amount": -105,
+    "date": "2022-09-19T11:00:00.000Z",
+    "category": "Entertainment",
+    "description": ""
   },
   {
     "id": 31,
-    "date": "2022-08-14T16:21:12.137Z",
-    "category": "Food",
-    "subCategory": "Supermarket",
-    "description": "Hypermarket",
-    "price": 85
+    "amount": -156,
+    "date": "2022-09-19T11:00:00.000Z",
+    "category": "Entertainment",
+    "description": ""
   },
   {
     "id": 32,
-    "date": "2022-08-14T16:21:12.137Z",
-    "category": "Food",
-    "subCategory": "Restaurant",
-    "description": "Burger King",
-    "price": 25
+    "amount": -58,
+    "date": "2022-09-19T11:00:00.000Z",
+    "category": "Insurance",
+    "description": ""
   },
   {
     "id": 33,
-    "date": "2022-08-14T16:21:12.137Z",
-    "category": "Transportation",
-    "subCategory": "Metro",
-    "description": "",
-    "price": 10
+    "amount": -190,
+    "date": "2022-09-19T11:00:00.000Z",
+    "category": "Health",
+    "description": ""
   },
   {
     "id": 34,
-    "date": "2022-08-14T16:21:12.137Z",
-    "category": "Transportation",
-    "subCategory": "Bus",
-    "description": "",
-    "price": 1
+    "amount": -179,
+    "date": "2022-09-19T11:00:00.000Z",
+    "category": "Food",
+    "description": "Burger King"
   },
   {
     "id": 35,
-    "date": "2022-09-14T16:21:12.137Z",
+    "amount": -78,
+    "date": "2022-09-19T11:00:00.000Z",
+    "category": "Food",
+    "description": "Burger King"
+  },
+  {
+    "id": 36,
+    "amount": -70,
+    "date": "2022-09-18T11:00:00.000Z",
     "category": "Transportation",
-    "subCategory": "Taxi",
-    "description": "",
-    "price": 15
+    "description": ""
+  },
+  {
+    "id": 37,
+    "amount": -70,
+    "date": "2022-09-18T11:00:00.000Z",
+    "category": "Bill",
+    "description": ""
+  },
+  {
+    "id": 38,
+    "amount": -137,
+    "date": "2022-09-18T11:00:00.000Z",
+    "category": "Car",
+    "description": ""
+  },
+  {
+    "id": 39,
+    "amount": -96,
+    "date": "2022-09-18T11:00:00.000Z",
+    "category": "Car",
+    "description": ""
+  },
+  {
+    "id": 40,
+    "amount": -186,
+    "date": "2022-09-18T11:00:00.000Z",
+    "category": "Travel",
+    "description": ""
+  },
+  {
+    "id": 41,
+    "amount": -76,
+    "date": "2022-09-18T11:00:00.000Z",
+    "category": "Insurance",
+    "description": ""
+  },
+  {
+    "id": 42,
+    "amount": -155,
+    "date": "2022-09-18T11:00:00.000Z",
+    "category": "Buy",
+    "description": ""
+  },
+  {
+    "id": 43,
+    "amount": -59,
+    "date": "2022-09-17T11:00:00.000Z",
+    "category": "Food",
+    "description": "Burger King"
+  },
+  {
+    "id": 44,
+    "amount": -139,
+    "date": "2022-09-17T11:00:00.000Z",
+    "category": "Buy",
+    "description": ""
+  },
+  {
+    "id": 45,
+    "amount": -186,
+    "date": "2022-09-17T11:00:00.000Z",
+    "category": "Charity",
+    "description": ""
+  },
+  {
+    "id": 46,
+    "amount": -160,
+    "date": "2022-09-17T11:00:00.000Z",
+    "category": "Buy",
+    "description": ""
+  },
+  {
+    "id": 47,
+    "amount": -31,
+    "date": "2022-09-17T11:00:00.000Z",
+    "category": "Health",
+    "description": ""
+  },
+  {
+    "id": 48,
+    "amount": -65,
+    "date": "2022-09-17T11:00:00.000Z",
+    "category": "Bill",
+    "description": ""
+  },
+  {
+    "id": 49,
+    "amount": -184,
+    "date": "2022-09-16T11:00:00.000Z",
+    "category": "Health",
+    "description": ""
+  },
+  {
+    "id": 50,
+    "amount": -42,
+    "date": "2022-09-16T11:00:00.000Z",
+    "category": "Bill",
+    "description": ""
+  },
+  {
+    "id": 51,
+    "amount": -42,
+    "date": "2022-09-16T11:00:00.000Z",
+    "category": "Bill",
+    "description": ""
+  },
+  {
+    "id": 52,
+    "amount": -66,
+    "date": "2022-09-16T11:00:00.000Z",
+    "category": "Travel",
+    "description": ""
+  },
+  {
+    "id": 53,
+    "amount": -43,
+    "date": "2022-09-16T11:00:00.000Z",
+    "category": "Insurance",
+    "description": ""
+  },
+  {
+    "id": 54,
+    "amount": -74,
+    "date": "2022-09-16T11:00:00.000Z",
+    "category": "Charity",
+    "description": ""
+  },
+  {
+    "id": 55,
+    "amount": -66,
+    "date": "2022-09-16T11:00:00.000Z",
+    "category": "Charity",
+    "description": ""
+  },
+  {
+    "id": 56,
+    "amount": -61,
+    "date": "2022-09-15T11:00:00.000Z",
+    "category": "Car",
+    "description": ""
+  },
+  {
+    "id": 57,
+    "amount": -87,
+    "date": "2022-09-15T11:00:00.000Z",
+    "category": "Bill",
+    "description": ""
+  },
+  {
+    "id": 58,
+    "amount": -134,
+    "date": "2022-09-15T11:00:00.000Z",
+    "category": "Food",
+    "description": "Burger King"
+  },
+  {
+    "id": 59,
+    "amount": -58,
+    "date": "2022-09-15T11:00:00.000Z",
+    "category": "Food",
+    "description": "Burger King"
+  },
+  {
+    "id": 60,
+    "amount": -112,
+    "date": "2022-09-15T11:00:00.000Z",
+    "category": "Health",
+    "description": ""
+  },
+  {
+    "id": 61,
+    "amount": -141,
+    "date": "2022-09-15T11:00:00.000Z",
+    "category": "Transportation",
+    "description": ""
+  },
+  {
+    "id": 62,
+    "amount": -78,
+    "date": "2022-09-14T11:00:00.000Z",
+    "category": "Charity",
+    "description": ""
+  },
+  {
+    "id": 63,
+    "amount": -55,
+    "date": "2022-09-14T11:00:00.000Z",
+    "category": "Bill",
+    "description": ""
+  },
+  {
+    "id": 64,
+    "amount": -112,
+    "date": "2022-09-14T11:00:00.000Z",
+    "category": "Entertainment",
+    "description": ""
+  },
+  {
+    "id": 65,
+    "amount": -25,
+    "date": "2022-09-14T11:00:00.000Z",
+    "category": "Buy",
+    "description": ""
+  },
+  {
+    "id": 66,
+    "amount": -172,
+    "date": "2022-09-14T11:00:00.000Z",
+    "category": "Health",
+    "description": ""
+  },
+  {
+    "id": 67,
+    "amount": -194,
+    "date": "2022-09-14T11:00:00.000Z",
+    "category": "Insurance",
+    "description": ""
+  },
+  {
+    "id": 68,
+    "amount": -118,
+    "date": "2022-09-14T11:00:00.000Z",
+    "category": "Insurance",
+    "description": ""
+  },
+  {
+    "id": 69,
+    "amount": -24,
+    "date": "2022-09-13T11:00:00.000Z",
+    "category": "Insurance",
+    "description": ""
+  },
+  {
+    "id": 70,
+    "amount": -38,
+    "date": "2022-09-13T11:00:00.000Z",
+    "category": "Car",
+    "description": ""
+  },
+  {
+    "id": 71,
+    "amount": -29,
+    "date": "2022-09-13T11:00:00.000Z",
+    "category": "Charity",
+    "description": ""
+  },
+  {
+    "id": 72,
+    "amount": -74,
+    "date": "2022-09-13T11:00:00.000Z",
+    "category": "Car",
+    "description": ""
+  },
+  {
+    "id": 73,
+    "amount": -53,
+    "date": "2022-09-13T11:00:00.000Z",
+    "category": "Buy",
+    "description": ""
+  },
+  {
+    "id": 74,
+    "amount": -184,
+    "date": "2022-09-13T11:00:00.000Z",
+    "category": "Insurance",
+    "description": ""
+  },
+  {
+    "id": 75,
+    "amount": -114,
+    "date": "2022-09-13T11:00:00.000Z",
+    "category": "Travel",
+    "description": ""
+  },
+  {
+    "id": 76,
+    "amount": -49,
+    "date": "2022-09-12T11:00:00.000Z",
+    "category": "Charity",
+    "description": ""
+  },
+  {
+    "id": 77,
+    "amount": -53,
+    "date": "2022-09-12T11:00:00.000Z",
+    "category": "Entertainment",
+    "description": ""
+  },
+  {
+    "id": 78,
+    "amount": -191,
+    "date": "2022-09-12T11:00:00.000Z",
+    "category": "Health",
+    "description": ""
+  },
+  {
+    "id": 79,
+    "amount": -116,
+    "date": "2022-09-12T11:00:00.000Z",
+    "category": "Transportation",
+    "description": ""
+  },
+  {
+    "id": 80,
+    "amount": -14,
+    "date": "2022-09-12T11:00:00.000Z",
+    "category": "Car",
+    "description": ""
+  },
+  {
+    "id": 81,
+    "amount": -179,
+    "date": "2022-09-12T11:00:00.000Z",
+    "category": "Food",
+    "description": "Burger King"
+  },
+  {
+    "id": 82,
+    "amount": -177,
+    "date": "2022-09-11T11:00:00.000Z",
+    "category": "Insurance",
+    "description": ""
+  },
+  {
+    "id": 83,
+    "amount": -199,
+    "date": "2022-09-11T11:00:00.000Z",
+    "category": "Buy",
+    "description": ""
+  },
+  {
+    "id": 84,
+    "amount": -41,
+    "date": "2022-09-11T11:00:00.000Z",
+    "category": "Buy",
+    "description": ""
+  },
+  {
+    "id": 85,
+    "amount": -65,
+    "date": "2022-09-11T11:00:00.000Z",
+    "category": "Health",
+    "description": ""
+  },
+  {
+    "id": 86,
+    "amount": -80,
+    "date": "2022-09-11T11:00:00.000Z",
+    "category": "Insurance",
+    "description": ""
+  },
+  {
+    "id": 87,
+    "amount": -28,
+    "date": "2022-09-11T11:00:00.000Z",
+    "category": "Buy",
+    "description": ""
+  },
+  {
+    "id": 88,
+    "amount": -84,
+    "date": "2022-09-11T11:00:00.000Z",
+    "category": "Insurance",
+    "description": ""
+  },
+  {
+    "id": 89,
+    "amount": -13,
+    "date": "2022-09-10T11:00:00.000Z",
+    "category": "Bill",
+    "description": ""
+  },
+  {
+    "id": 90,
+    "amount": -67,
+    "date": "2022-09-10T11:00:00.000Z",
+    "category": "Insurance",
+    "description": ""
+  },
+  {
+    "id": 91,
+    "amount": -75,
+    "date": "2022-09-10T11:00:00.000Z",
+    "category": "Food",
+    "description": "Burger King"
+  },
+  {
+    "id": 92,
+    "amount": -49,
+    "date": "2022-09-10T11:00:00.000Z",
+    "category": "Health",
+    "description": ""
+  },
+  {
+    "id": 93,
+    "amount": -16,
+    "date": "2022-09-10T11:00:00.000Z",
+    "category": "Bill",
+    "description": ""
+  },
+  {
+    "id": 94,
+    "amount": -43,
+    "date": "2022-09-10T11:00:00.000Z",
+    "category": "Charity",
+    "description": ""
+  },
+  {
+    "id": 95,
+    "amount": -104,
+    "date": "2022-09-09T11:00:00.000Z",
+    "category": "Bill",
+    "description": ""
+  },
+  {
+    "id": 96,
+    "amount": -123,
+    "date": "2022-09-09T11:00:00.000Z",
+    "category": "Entertainment",
+    "description": ""
+  },
+  {
+    "id": 97,
+    "amount": -27,
+    "date": "2022-09-09T11:00:00.000Z",
+    "category": "Charity",
+    "description": ""
+  },
+  {
+    "id": 98,
+    "amount": -21,
+    "date": "2022-09-09T11:00:00.000Z",
+    "category": "Health",
+    "description": ""
+  },
+  {
+    "id": 99,
+    "amount": -19,
+    "date": "2022-09-09T11:00:00.000Z",
+    "category": "Buy",
+    "description": ""
+  },
+  {
+    "id": 100,
+    "amount": -38,
+    "date": "2022-09-09T11:00:00.000Z",
+    "category": "Bill",
+    "description": ""
+  },
+  {
+    "id": 101,
+    "amount": -169,
+    "date": "2022-09-09T11:00:00.000Z",
+    "category": "Transportation",
+    "description": ""
+  },
+  {
+    "id": 102,
+    "amount": -159,
+    "date": "2022-09-08T11:00:00.000Z",
+    "category": "Insurance",
+    "description": ""
+  },
+  {
+    "id": 103,
+    "amount": -85,
+    "date": "2022-09-08T11:00:00.000Z",
+    "category": "Health",
+    "description": ""
+  },
+  {
+    "id": 104,
+    "amount": -24,
+    "date": "2022-09-08T11:00:00.000Z",
+    "category": "Travel",
+    "description": ""
+  },
+  {
+    "id": 105,
+    "amount": -163,
+    "date": "2022-09-08T11:00:00.000Z",
+    "category": "Entertainment",
+    "description": ""
+  },
+  {
+    "id": 106,
+    "amount": -199,
+    "date": "2022-09-08T11:00:00.000Z",
+    "category": "Entertainment",
+    "description": ""
+  },
+  {
+    "id": 107,
+    "amount": -153,
+    "date": "2022-09-08T11:00:00.000Z",
+    "category": "Charity",
+    "description": ""
+  },
+  {
+    "id": 108,
+    "amount": -167,
+    "date": "2022-09-08T11:00:00.000Z",
+    "category": "Buy",
+    "description": ""
+  },
+  {
+    "id": 109,
+    "amount": -104,
+    "date": "2022-09-07T11:00:00.000Z",
+    "category": "Charity",
+    "description": ""
+  },
+  {
+    "id": 110,
+    "amount": -93,
+    "date": "2022-09-07T11:00:00.000Z",
+    "category": "Health",
+    "description": ""
+  },
+  {
+    "id": 111,
+    "amount": -171,
+    "date": "2022-09-07T11:00:00.000Z",
+    "category": "Travel",
+    "description": ""
+  },
+  {
+    "id": 112,
+    "amount": -175,
+    "date": "2022-09-07T11:00:00.000Z",
+    "category": "Bill",
+    "description": ""
+  },
+  {
+    "id": 113,
+    "amount": -93,
+    "date": "2022-09-07T11:00:00.000Z",
+    "category": "Insurance",
+    "description": ""
+  },
+  {
+    "id": 114,
+    "amount": -179,
+    "date": "2022-09-07T11:00:00.000Z",
+    "category": "Travel",
+    "description": ""
+  },
+  {
+    "id": 115,
+    "amount": -138,
+    "date": "2022-09-06T11:00:00.000Z",
+    "category": "Health",
+    "description": ""
+  },
+  {
+    "id": 116,
+    "amount": -94,
+    "date": "2022-09-06T11:00:00.000Z",
+    "category": "Buy",
+    "description": ""
+  },
+  {
+    "id": 117,
+    "amount": -146,
+    "date": "2022-09-06T11:00:00.000Z",
+    "category": "Transportation",
+    "description": ""
+  },
+  {
+    "id": 118,
+    "amount": -16,
+    "date": "2022-09-06T11:00:00.000Z",
+    "category": "Charity",
+    "description": ""
+  },
+  {
+    "id": 119,
+    "amount": -64,
+    "date": "2022-09-06T11:00:00.000Z",
+    "category": "Buy",
+    "description": ""
+  },
+  {
+    "id": 120,
+    "amount": -43,
+    "date": "2022-09-06T11:00:00.000Z",
+    "category": "Insurance",
+    "description": ""
+  },
+  {
+    "id": 121,
+    "amount": -25,
+    "date": "2022-09-06T11:00:00.000Z",
+    "category": "Buy",
+    "description": ""
+  },
+  {
+    "id": 122,
+    "amount": -199,
+    "date": "2022-09-05T11:00:00.000Z",
+    "category": "Food",
+    "description": "Burger King"
+  },
+  {
+    "id": 123,
+    "amount": -118,
+    "date": "2022-09-05T11:00:00.000Z",
+    "category": "Charity",
+    "description": ""
+  },
+  {
+    "id": 124,
+    "amount": -176,
+    "date": "2022-09-05T11:00:00.000Z",
+    "category": "Transportation",
+    "description": ""
+  },
+  {
+    "id": 125,
+    "amount": -159,
+    "date": "2022-09-05T11:00:00.000Z",
+    "category": "Food",
+    "description": "Burger King"
+  },
+  {
+    "id": 126,
+    "amount": -19,
+    "date": "2022-09-05T11:00:00.000Z",
+    "category": "Charity",
+    "description": ""
+  },
+  {
+    "id": 127,
+    "amount": -78,
+    "date": "2022-09-05T11:00:00.000Z",
+    "category": "Bill",
+    "description": ""
+  },
+  {
+    "id": 128,
+    "amount": -32,
+    "date": "2022-09-04T11:00:00.000Z",
+    "category": "Entertainment",
+    "description": ""
+  },
+  {
+    "id": 129,
+    "amount": -139,
+    "date": "2022-09-04T11:00:00.000Z",
+    "category": "Buy",
+    "description": ""
+  },
+  {
+    "id": 130,
+    "amount": -190,
+    "date": "2022-09-04T11:00:00.000Z",
+    "category": "Buy",
+    "description": ""
+  },
+  {
+    "id": 131,
+    "amount": -173,
+    "date": "2022-09-04T11:00:00.000Z",
+    "category": "Transportation",
+    "description": ""
+  },
+  {
+    "id": 132,
+    "amount": -184,
+    "date": "2022-09-04T11:00:00.000Z",
+    "category": "Charity",
+    "description": ""
+  },
+  {
+    "id": 133,
+    "amount": -187,
+    "date": "2022-09-04T11:00:00.000Z",
+    "category": "Charity",
+    "description": ""
+  },
+  {
+    "id": 134,
+    "amount": -188,
+    "date": "2022-09-04T11:00:00.000Z",
+    "category": "Charity",
+    "description": ""
+  },
+  {
+    "id": 135,
+    "amount": -98,
+    "date": "2022-09-03T11:00:00.000Z",
+    "category": "Insurance",
+    "description": ""
+  },
+  {
+    "id": 136,
+    "amount": -12,
+    "date": "2022-09-03T11:00:00.000Z",
+    "category": "Entertainment",
+    "description": ""
+  },
+  {
+    "id": 137,
+    "amount": -133,
+    "date": "2022-09-03T11:00:00.000Z",
+    "category": "Insurance",
+    "description": ""
+  },
+  {
+    "id": 138,
+    "amount": -188,
+    "date": "2022-09-03T11:00:00.000Z",
+    "category": "Food",
+    "description": "Burger King"
+  },
+  {
+    "id": 139,
+    "amount": -78,
+    "date": "2022-09-03T11:00:00.000Z",
+    "category": "Health",
+    "description": ""
+  },
+  {
+    "id": 140,
+    "amount": -101,
+    "date": "2022-09-03T11:00:00.000Z",
+    "category": "Transportation",
+    "description": ""
+  },
+  {
+    "id": 141,
+    "amount": -71,
+    "date": "2022-09-03T11:00:00.000Z",
+    "category": "Charity",
+    "description": ""
+  },
+  {
+    "id": 142,
+    "amount": -28,
+    "date": "2022-09-02T11:00:00.000Z",
+    "category": "Food",
+    "description": "Burger King"
+  },
+  {
+    "id": 143,
+    "amount": -11,
+    "date": "2022-09-02T11:00:00.000Z",
+    "category": "Health",
+    "description": ""
+  },
+  {
+    "id": 144,
+    "amount": -122,
+    "date": "2022-09-02T11:00:00.000Z",
+    "category": "Entertainment",
+    "description": ""
+  },
+  {
+    "id": 145,
+    "amount": -113,
+    "date": "2022-09-02T11:00:00.000Z",
+    "category": "Buy",
+    "description": ""
+  },
+  {
+    "id": 146,
+    "amount": -90,
+    "date": "2022-09-02T11:00:00.000Z",
+    "category": "Car",
+    "description": ""
+  },
+  {
+    "id": 147,
+    "amount": -173,
+    "date": "2022-09-02T11:00:00.000Z",
+    "category": "Food",
+    "description": "Burger King"
+  },
+  {
+    "id": 148,
+    "amount": -63,
+    "date": "2022-09-01T11:00:00.000Z",
+    "category": "Food",
+    "description": "Burger King"
+  },
+  {
+    "id": 149,
+    "amount": -149,
+    "date": "2022-09-01T11:00:00.000Z",
+    "category": "Buy",
+    "description": ""
+  },
+  {
+    "id": 150,
+    "amount": -51,
+    "date": "2022-09-01T11:00:00.000Z",
+    "category": "Travel",
+    "description": ""
+  },
+  {
+    "id": 151,
+    "amount": -148,
+    "date": "2022-09-01T11:00:00.000Z",
+    "category": "Entertainment",
+    "description": ""
+  },
+  {
+    "id": 152,
+    "amount": -16,
+    "date": "2022-09-01T11:00:00.000Z",
+    "category": "Bill",
+    "description": ""
+  },
+  {
+    "id": 153,
+    "amount": -14,
+    "date": "2022-09-01T11:00:00.000Z",
+    "category": "Transportation",
+    "description": ""
+  },
+  {
+    "id": 154,
+    "amount": -146,
+    "date": "2022-09-01T11:00:00.000Z",
+    "category": "Food",
+    "description": "Burger King"
+  },
+  {
+    "id": 155,
+    "amount": 10000,
+    "date": "2022-09-01T11:00:00.000Z",
+    "category": "Income",
+    "description": ""
+  },
+  {
+    "id": 156,
+    "amount": 10000,
+    "date": "2022-09-01T11:00:00.000Z",
+    "category": "Insurance",
+    "description": ""
   }
 ]

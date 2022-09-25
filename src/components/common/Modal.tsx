@@ -60,7 +60,7 @@ const Modal = ({
                 <hr className="mt-4 mb-2" />
                 <footer className="flex gap-x-2 justify-end">
                   <button
-                    className={`bg-gray-500 text-white rounded-md px-4 py-2${
+                    className={`bg-gradient-to-l from-gray-300 to-gray-500 text-white rounded-md px-4 py-2${
                       leftButtonClassName ? " " + leftButtonClassName : ""
                     }`}
                     onClick={() => {
@@ -74,7 +74,7 @@ const Modal = ({
                     className={
                       rightButtonClassName
                         ? `${rightButtonClassName} text-white rounded-md px-4 py-2`
-                        : "bg-blue-500 text-white rounded-md px-4 py-2"
+                        : "bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 text-white rounded-md px-4 py-2"
                     }
                     onClick={onSubmit}
                   >
