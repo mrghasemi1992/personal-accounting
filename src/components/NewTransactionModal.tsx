@@ -128,7 +128,7 @@ const NewTransactionModal = ({
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onSubmit={handleSubmit}
-          className="bg-cultured p-8 fixed inset-0 flex flex-col gap-y-4"
+          className="bg-cultured p-8 fixed inset-0"
         >
           <CloseIcon
             className="ml-auto cursor-pointer w-8 h-8 text-gray-500 mb-4"
@@ -145,10 +145,10 @@ const NewTransactionModal = ({
             placeholderText="Date"
           />
           {formData.error.date && (
-            <p className="text-xs text-red-500">{formData.error.date}</p>
+            <p className="text-xs text-red-500 mt-2">{formData.error.date}</p>
           )}
           <input
-            className="w-full rounded-xl outline-none p-4"
+            className="w-full rounded-xl outline-none p-4 mt-4"
             placeholder="Price"
             type="number"
             value={formData.data.amount}
@@ -160,7 +160,7 @@ const NewTransactionModal = ({
             autoFocus
           />
           {formData.error.amount && (
-            <p className="text-xs text-red-500">{formData.error.amount}</p>
+            <p className="text-xs text-red-500 mt-2">{formData.error.amount}</p>
           )}
           <Dropdown
             isOpen={categoryIsOpen}
@@ -173,12 +173,15 @@ const NewTransactionModal = ({
                 draft.data.category = value;
               })
             }
+            className="mt-4"
           />
           {formData.error.category && (
-            <p className="text-xs text-red-500">{formData.error.category}</p>
+            <p className="text-xs text-red-500 mt-2">
+              {formData.error.category}
+            </p>
           )}
           <input
-            className="w-full rounded-xl outline-none p-4"
+            className="w-full rounded-xl outline-none p-4 my-4"
             placeholder="Description"
             type="text"
             name="price"
@@ -189,7 +192,7 @@ const NewTransactionModal = ({
               })
             }
           />
-          <button className="bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 text-white w-full h-14 rounded-xl mt-auto font-semibold text-lg">
+          <button className="bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 text-white w-full h-14 rounded-xl font-semibold text-lg">
             {transactionIdForEdit ? "Edit" : "Submit"}
           </button>
         </motion.form>
