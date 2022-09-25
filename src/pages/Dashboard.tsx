@@ -15,9 +15,12 @@ const Dashboard = ({}: Props) => {
   return (
     <div className="p-6">
       <div className="text-right">
-        <div className="bg-white w-10 h-10 inline-flex items-center justify-center rounded-xl mb-4">
+        <Link
+          to="/settings"
+          className="bg-white w-10 h-10 inline-flex items-center justify-center rounded-xl mb-4"
+        >
           <GearIcon className="scale-125 text-gray-400" />
-        </div>
+        </Link>
       </div>
       <Summary />
 
