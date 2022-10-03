@@ -14,4 +14,15 @@ export type Transaction = {
   date: string;
 };
 
-export type Category = "Food" | "Transportation" | "Bill" | "";
+export type Category =
+  | "Food"
+  | "Transportation"
+  | "Bill"
+  | "Charity"
+  | "Insurance"
+  | "Buy"
+  | "Entertainment"
+  | "Travel"
+  | "Health"
+  | "Income"
+  | "";

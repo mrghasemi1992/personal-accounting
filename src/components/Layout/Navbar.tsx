@@ -1,10 +1,13 @@
-import { ReactComponent as GridIcon } from "../../assets/icons/common/grid.svg";
-import { ReactComponent as BarChartIcon } from "../../assets/icons/common/bar-chart.svg";
-import { ReactComponent as PlusIcon } from "../../assets/icons/common/plus.svg";
-import { Link } from "react-router-dom";
-import NewTransactionModal from "../NewTransactionModal";
 import { useState } from "react";
+import { Link } from "react-router-dom";
+
 import { useTransactionStore } from "../../stores/transactionStore";
+
+import NewTransactionModal from "../NewTransactionModal";
+
+import { ReactComponent as GridIcon } from "../../assets/icons/common/apps.svg";
+import { ReactComponent as ChartIcon } from "../../assets/icons/common/chart-line-up.svg";
+import { ReactComponent as PlusIcon } from "../../assets/icons/common/plus-small.svg";
 
 const Navbar = () => {
   const [newTransactionIsOpen, setNewTransactionIsOpen] = useState(false);
@@ -17,17 +20,17 @@ const Navbar = () => {
         style={{ boxShadow: "0px 0px 15px 0px rgba(217,217,217,1)" }}
       >
         <Link to="/">
-          <GridIcon className="scale-125 text-gray-400" />
+          <GridIcon className="fill-current h-6 w-6 text-gray-400" />
         </Link>
         <div
           onClick={() => setNewTransactionIsOpen(true)}
           className="cursor-pointer w-16 h-16 rounded-full flex items-center justify-center absolute right-1/2 transform translate-x-1/2 -top-8 bg-gradient-to-t from-indigo-400 via-purple-400 to-pink-400"
         >
-          <PlusIcon className="text-white w-12 h-12" />
+          <PlusIcon className="text-white fill-current w-12 h-12" />
         </div>
         <Link to={transactions.length ? "/reports" : "/"}>
-          <BarChartIcon
-            className={`scale-125 ${
+          <ChartIcon
+            className={`w-6 h-6 fill-current ${
               transactions.length ? "text-gray-400" : "text-gray-300"
             }`}
           />
