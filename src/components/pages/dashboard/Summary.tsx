@@ -1,4 +1,4 @@
-import { ReactComponent as ArrowIcon } from "../../../assets/icons/common/arrow.svg";
+import { ReactComponent as ArrowIcon } from "../../../assets/icons/common/arrow-down.svg";
 import { useTransactionStore } from "../../../stores/transactionStore";
 
 const Summary = () => {
@@ -34,8 +34,8 @@ const Summary = () => {
       </div>
       <div className="flex justify-between mt-8">
         <div className="flex items-center gap-x-4">
-          <div className="bg-white rounded-full p-1 scale-125 opacity-60">
-            <ArrowIcon className="text-green-500" />
+          <div className="bg-white rounded-full w-8 h-8 flex items-center justify-center opacity-60">
+            <ArrowIcon className="text-green-500 fill-current h-5 w-5" />
           </div>
           <div>
             <p className="text-white">Income</p>
@@ -43,8 +43,8 @@ const Summary = () => {
           </div>
         </div>
         <div className="flex items-center gap-x-4">
-          <div className="bg-white rounded-full p-1 scale-125 opacity-60">
-            <ArrowIcon className="text-red-500 transform rotate-180" />
+          <div className="bg-white rounded-full w-8 h-8 flex items-center justify-center opacity-60">
+            <ArrowIcon className="text-red-500 fill-current h-5 w-5 transform rotate-180" />
           </div>
           <div>
             <p className="text-white">Expenses</p>

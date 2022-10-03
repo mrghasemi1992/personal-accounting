@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import _ from "underscore";
+import { Link } from "react-router-dom";
+
+import TransactionCard from "../components/common/TransactionCard";
 
 import { Transaction as TransactionIF } from "../interfaces";
-
-import { ReactComponent as ArrowIcon } from "../assets/icons/common/arrow.svg";
-import { Link } from "react-router-dom";
 import { useTransactionStore } from "../stores/transactionStore";
-import TransactionCard from "../components/common/TransactionCard";
+
+import { ReactComponent as ArrowIcon } from "../assets/icons/common/arrow-down.svg";
 
 const Transactions = () => {
   const { transactions } = useTransactionStore();
@@ -41,8 +42,11 @@ const Transactions = () => {
   return (
     <div className="p-6 pb-32">
       <div className="bg-white rounded-xl w-10 h-10 flex items-center justify-center">
-        <Link to="/" className="rounded-full bg-gray-400 p-1">
-          <ArrowIcon className="text-white transform rotate-90" />
+        <Link
+          to="/"
+          className="rounded-full bg-gray-400 w-8 h-8 flex justify-center items-center fill-current"
+        >
+          <ArrowIcon className="text-white transform rotate-90 w-4 h-4" />
         </Link>
       </div>
       {dates.map((date, j) => (
@@ -52,7 +56,11 @@ const Transactions = () => {
           </div>
           <div className="flex flex-col gap-y-6">
             {groupedTransactions[j].map((transaction, index) => (
-              <TransactionCard transaction={transaction} showDate={false} />
+              <TransactionCard
+                key={index}
+                transaction={transaction}
+                showDate={false}
+              />
             ))}
           </div>
         </>

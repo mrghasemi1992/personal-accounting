@@ -2,7 +2,7 @@ import Summary from "../components/pages/dashboard/Summary";
 
 import { Transaction } from "../interfaces";
 
-import { ReactComponent as GearIcon } from "../assets/icons/common/gear.svg";
+import { ReactComponent as SettingsIcon } from "../assets/icons/common/settings.svg";
 
 import { Link } from "react-router-dom";
 import TransactionCard from "../components/common/TransactionCard";
@@ -61,7 +61,7 @@ const Dashboard = () => {
               to="/settings"
               className="bg-white w-10 h-10 inline-flex items-center justify-center rounded-xl"
             >
-              <GearIcon className="scale-125 text-gray-400" />
+              <SettingsIcon className="fill-current text-gray-400 w-5 h-5" />
             </Link>
           </div>
           <Summary />
