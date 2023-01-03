@@ -10,7 +10,6 @@
     "@types/node": "^16.11.59",
     "@types/react": "^18.0.20",
     "@types/react-dom": "^18.0.6",
-    "framer-motion": "^7.3.6",
     "moment": "^2.29.4",
     "react": "^18.2.0",
     "react-chartjs-2": "^4.3.1",
@@ -18,7 +17,6 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.4.0",
     "react-scripts": "5.0.1",
-    "react-transition-group": "^4.4.5",
     "react-use": "^17.4.0",
     "typescript": "^4.8.3",
     "underscore": "^1.13.4",
@@ -56,6 +54,7 @@
     "@types/underscore": "^1.11.4",
     "autoprefixer": "^10.4.12",
     "postcss": "^8.4.16",
+    "prettier": "^2.8.1",
     "tailwindcss": "^3.1.8"
   }
 }

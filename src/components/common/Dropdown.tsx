@@ -1,4 +1,3 @@
-import { AnimatePresence, motion } from "framer-motion";
 import { useRef } from "react";
 
 import useOnClickOutside from "../../utils/useOnClickOutside";
@@ -45,43 +44,28 @@ const Dropdown = ({
         ) : (
           <div className="text-gray-400">{placeholder}</div>
         )}
-        <motion.div
-          animate={
-            isOpen
-              ? { transform: "rotate(180deg)" }
-              : { transform: "rotate(0deg)" }
-          }
-        >
-          <ChevronIcon className={disable ? "text-gray-400" : ""} />
-        </motion.div>
+        <ChevronIcon
+          className={`transform${disable ? " text-gray-400" : ""} ${
+            isOpen ? "transform rotate-180" : "rotate-0"
+          }`}
+        />
       </div>
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ y: -20, opacity: 0 }}
-            animate={{ y: 8, opacity: 1 }}
-            exit={{ y: -20, opacity: 0 }}
-            transition={{
-              opacity: { duration: 0.2 },
-              y: { duration: 0.3, type: "spring" },
-            }}
-            className="absolute bg-white rounded-lg shadow-xl p-4 w-full flex flex-col gap-y-2 z-10"
-          >
-            {items.map((item, index) => (
-              <p
-                key={index}
-                className="cursor-pointer"
-                onClick={() => {
-                  setValue(item);
-                  setIsOpen(false);
-                }}
-              >
-                {item}
-              </p>
-            ))}
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {isOpen && (
+        <div className="absolute bg-white rounded-lg shadow-xl p-4 w-full flex flex-col gap-y-2 z-10">
+          {items.map((item, index) => (
+            <p
+              key={index}
+              className="cursor-pointer"
+              onClick={() => {
+                setValue(item);
+                setIsOpen(false);
+              }}
+            >
+              {item}
+            </p>
+          ))}
+        </div>
+      )}
     </div>
   );
 };

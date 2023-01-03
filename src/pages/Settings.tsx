@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
 
 import Modal from "../components/common/Modal";
 
@@ -22,12 +21,7 @@ const Settings = () => {
   };
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      className="p-6"
-    >
+    <div className="p-6">
       <div className="flex flex-col gap-y-4">
         <button
           className="bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 text-white px-4 py-3 rounded-xl"
@@ -74,7 +68,7 @@ const Settings = () => {
           data?
         </p>
       </Modal>
-    </motion.div>
+    </div>
   );
 };
 

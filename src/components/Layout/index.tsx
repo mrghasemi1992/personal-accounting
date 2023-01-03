@@ -1,4 +1,3 @@
-// import { AnimatePresence } from "framer-motion";
 import { ReactNode } from "react";
 
 // import Toast from "../common/Toast";
@@ -12,19 +11,17 @@ const Layout = ({ children }: Props) => {
     <>
       <main>{children}</main>
       <Navbar />
-      {/* <AnimatePresence>
-        {toasts.map((toast, index) => (
-          <Toast
-            key={index}
-            index={index}
-            isOpen={toast.state}
-            setToasts={setToasts}
-            toasts={toasts}
-            text={toast.text}
-            type={toast.type}
-          />
-        ))}
-      </AnimatePresence> */}
+      {/*{toasts.map((toast, index) => (*/}
+      {/*  <Toast*/}
+      {/*    key={index}*/}
+      {/*    index={index}*/}
+      {/*    isOpen={toast.state}*/}
+      {/*    setToasts={setToasts}*/}
+      {/*    toasts={toasts}*/}
+      {/*    text={toast.text}*/}
+      {/*    type={toast.type}*/}
+      {/*  />*/}
+      {/*))}*/}
     </>
   );
 };

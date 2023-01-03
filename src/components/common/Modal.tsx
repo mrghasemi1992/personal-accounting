@@ -1,4 +1,3 @@
-import { AnimatePresence, motion } from "framer-motion";
 import { ReactNode } from "react";
 
 import { ReactComponent as CloseIcon } from "../../assets/icons/common/close.svg";
@@ -33,14 +32,9 @@ const Modal = ({
   wrapperClassName,
 }: Props) => {
   return (
-    <AnimatePresence>
+    <>
       {isOpen && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1, background: "rgba(0, 0, 0, 0.2)" }}
-          exit={{ opacity: 0 }}
-          className="fixed inset-0 z-10"
-        >
+        <div className="fixed inset-0 z-10 bg-[rgba(0, 0, 0, 0.2)]">
           <div
             className={
               wrapperClassName
@@ -84,9 +78,9 @@ const Modal = ({
               </>
             )}
           </div>
-        </motion.div>
+        </div>
       )}
-    </AnimatePresence>
+    </>
   );
 };
 

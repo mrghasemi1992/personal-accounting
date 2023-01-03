@@ -1,5 +1,3 @@
-import { PanInfo, motion, useAnimationControls } from "framer-motion";
-
 import { Category, Transaction } from "../../interfaces";
 
 import { ReactComponent as HamburgerSodaIcon } from "../../assets/icons/common/hamburger-soda.svg";
@@ -12,15 +10,10 @@ import { ReactComponent as PlaneIcon } from "../../assets/icons/common/plane.svg
 import { ReactComponent as DoctorIcon } from "../../assets/icons/common/doctor.svg";
 import { ReactComponent as MoneyIcon } from "../../assets/icons/common/money-bill-wave.svg";
 import { ReactComponent as HandHoldingHeartIcon } from "../../assets/icons/common/hand-holding-heart.svg";
-import { ReactComponent as TrashIcon } from "../../assets/icons/common/trash.svg";
-import { ReactComponent as PencilIcon } from "../../assets/icons/common/pencil-square.svg";
-import { useState } from "react";
 
 type Props = { transaction: Transaction; showDate?: boolean };
 
 const TransactionCard = ({ transaction, showDate = true }: Props) => {
-  const [showMoreActions, setShowMoreActions] = useState(false);
-  const controls = useAnimationControls();
   const handleIcon = (category: Category) => {
     switch (category) {
       case "Food":
@@ -88,33 +81,9 @@ const TransactionCard = ({ transaction, showDate = true }: Props) => {
     }
   };
 
-  const handleDragEnd = (
-    event: MouseEvent | TouchEvent | PointerEvent,
-    info: PanInfo
-  ) => {
-    if (info.offset.x < -150) {
-      setShowMoreActions(true);
-      return controls.start({ x: -150 });
-    }
-    if (info.velocity.x <= 0) {
-      setShowMoreActions(false);
-      return controls.start({ x: 0 });
-    }
-    if (info.offset.x > 0) {
-      setShowMoreActions(false);
-      return controls.start({ x: 0 });
-    }
-  };
-
   return (
     <div className="relative">
-      <motion.div
-        drag="x"
-        onDragEnd={handleDragEnd}
-        dragConstraints={{ left: -150, right: 0 }}
-        animate={controls}
-        className="bg-white rounded-3xl p-6 flex justify-between items-center"
-      >
+      <div className="bg-white rounded-3xl p-6 flex justify-between items-center">
         <div className="flex gap-x-4 items-center">
           {handleIcon(transaction.category)}
           <div className="font-semibold text-gray-500">
@@ -131,13 +100,7 @@ const TransactionCard = ({ transaction, showDate = true }: Props) => {
             </div>
           )}
         </div>
-      </motion.div>
-      {showMoreActions && (
-        <div className="absolute flex gap-x-5 right-0 top-1/2 transform -translate-y-1/2">
-          <PencilIcon className="fill-current text-gray-500 w-8 h-8" />
-          <TrashIcon className="fill-current text-gray-500 w-8 h-8" />
-        </div>
-      )}
+      </div>
     </div>
   );
 };

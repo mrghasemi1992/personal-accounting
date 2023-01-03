@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import ReactDatePicker from "react-datepicker";
-import { AnimatePresence, motion } from "framer-motion";
 import { useImmer } from "use-immer";
 
 import Dropdown from "./common/Dropdown";
@@ -121,15 +120,9 @@ const NewTransactionModal = ({
   }, [isOpen]);
 
   return (
-    <AnimatePresence>
+    <>
       {isOpen && (
-        <motion.form
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          onSubmit={handleSubmit}
-          className="bg-cultured p-8 fixed inset-0"
-        >
+        <form onSubmit={handleSubmit} className="bg-cultured p-8 fixed inset-0">
           <CloseIcon
             className="ml-auto cursor-pointer w-8 h-8 text-gray-500 mb-4"
             onClick={handleClose}
@@ -195,9 +188,9 @@ const NewTransactionModal = ({
           <button className="bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 text-white w-full h-14 rounded-xl font-semibold text-lg">
             {transactionIdForEdit ? "Edit" : "Submit"}
           </button>
-        </motion.form>
+        </form>
       )}
-    </AnimatePresence>
+    </>
   );
 };
 

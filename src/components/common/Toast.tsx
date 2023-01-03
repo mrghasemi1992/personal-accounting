@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { useEffect } from "react";
 
 import { ReactComponent as CloseIcon } from "../../assets/icons/common/close.svg";
@@ -32,17 +31,13 @@ const Toast = ({ isOpen, setToasts, text, type, index, toasts }: Props) => {
   return (
     <>
       {isOpen && (
-        <motion.div
-          initial={{ opacity: 0, x: -500 }}
-          animate={{ opacity: 1, x: 16 }}
-          exit={{ opacity: 0, x: -500 }}
+        <div
           className={`py-2 px-3 ${
             type === "success"
               ? "bg-green-500 shadow-green-500/25"
               : "bg-red-500 shadow-red-500/25"
           } shadow-lg rounded-md flex items-center justify-between absolute`}
           key={index}
-          layoutId={String(index)}
           style={{ bottom: `${16 + 46 * index}px` }}
         >
           <p className="mr-4 text-white">{text}</p>
@@ -55,7 +50,7 @@ const Toast = ({ isOpen, setToasts, text, type, index, toasts }: Props) => {
               ]);
             }}
           />
-        </motion.div>
+        </div>
       )}
     </>
   );

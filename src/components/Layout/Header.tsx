@@ -1,4 +1,3 @@
-import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
@@ -34,53 +33,45 @@ const Header = () => {
         <img src={logo} width={32} height={32} alt="Logo" />
       </div>
 
-      <AnimatePresence>
-        {menuIsOpen && (
-          <motion.div
-            initial={{ opacity: 0, x: -500 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -500 }}
-            className="fixed inset-0 bg-white z-10 px-8 py-16 flex flex-col gap-y-4"
-            transition={{ duration: 0.3, ease: "easeInOut" }}
+      {menuIsOpen && (
+        <div className="fixed inset-0 bg-white z-10 px-8 py-16 flex flex-col gap-y-4">
+          <CloseIcon
+            className="absolute right-4 top-4 cursor-pointer text-gray-500"
+            onClick={() => setMenuIsOpen(false)}
+          />
+          <Link
+            to="/"
+            className={`${
+              location.pathname === "/" ? "text-blue-600 " : "text-gray-600"
+            } text-xl font-medium`}
+            onClick={() => setMenuIsOpen(false)}
           >
-            <CloseIcon
-              className="absolute right-4 top-4 cursor-pointer text-gray-500"
-              onClick={() => setMenuIsOpen(false)}
-            />
-            <Link
-              to="/"
-              className={`${
-                location.pathname === "/" ? "text-blue-600 " : "text-gray-600"
-              } text-xl font-medium`}
-              onClick={() => setMenuIsOpen(false)}
-            >
-              Transactions
-            </Link>
-            <Link
-              to="/reports"
-              className={`${
-                location.pathname === "/reports"
-                  ? "text-blue-600 "
-                  : "text-gray-600"
-              } text-xl font-medium`}
-              onClick={() => setMenuIsOpen(false)}
-            >
-              Reports
-            </Link>
-            <Link
-              to="/settings"
-              className={`${
-                location.pathname === "/settings"
-                  ? "text-blue-600 "
-                  : "text-gray-600"
-              } text-xl font-medium`}
-              onClick={() => setMenuIsOpen(false)}
-            >
-              Settings
-            </Link>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            Transactions
+          </Link>
+          <Link
+            to="/reports"
+            className={`${
+              location.pathname === "/reports"
+                ? "text-blue-600 "
+                : "text-gray-600"
+            } text-xl font-medium`}
+            onClick={() => setMenuIsOpen(false)}
+          >
+            Reports
+          </Link>
+          <Link
+            to="/settings"
+            className={`${
+              location.pathname === "/settings"
+                ? "text-blue-600 "
+                : "text-gray-600"
+            } text-xl font-medium`}
+            onClick={() => setMenuIsOpen(false)}
+          >
+            Settings
+          </Link>
+        </div>
+      )}
     </header>
   );
 };
