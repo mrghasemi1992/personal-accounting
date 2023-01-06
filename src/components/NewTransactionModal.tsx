@@ -22,7 +22,6 @@ const NewTransactionModal = ({
   setIsOpen,
   transactionIdForEdit,
 }: Props) => {
-  const [categoryIsOpen, setCategoryIsOpen] = useState(false);
   const [formData, setFormData] = useImmer<{
     data: NewTransaction;
     error: {
@@ -69,7 +68,6 @@ const NewTransactionModal = ({
   const handleClose = () => {
     setIsOpen(false);
     resetForm();
-    setCategoryIsOpen(false);
   };
 
   const handleErrors = () => {
@@ -109,7 +107,6 @@ const NewTransactionModal = ({
           });
       }
       setIsOpen(false);
-      setCategoryIsOpen(false);
       resetForm();
     }
   };
@@ -156,10 +153,12 @@ const NewTransactionModal = ({
             <p className="text-xs text-red-500 mt-2">{formData.error.amount}</p>
           )}
           <Dropdown
-            isOpen={categoryIsOpen}
-            setIsOpen={setCategoryIsOpen}
-            placeholder="Category"
-            items={["Food", "Transportation", "Bill"]}
+            placeholder="Select a Category"
+            items={[
+              { title: "Food", value: "food" },
+              { title: "Transportation", value: "transportation" },
+              { title: "Bill", value: "bill" },
+            ]}
             value={formData.data.category}
             setValue={(value: Category) =>
               setFormData((draft) => {

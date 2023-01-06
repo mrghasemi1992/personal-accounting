@@ -1,0 +1,6 @@
+select {
+  appearance: none;
+  background-image: url("../../../assets/icons/common/chevron.svg");
+  background-repeat: no-repeat;
+  background-position: 95%;
+}

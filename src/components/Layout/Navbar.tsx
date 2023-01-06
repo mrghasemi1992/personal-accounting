@@ -10,7 +10,7 @@ import { ReactComponent as ChartIcon } from "../../assets/icons/common/chart-lin
 import { ReactComponent as PlusIcon } from "../../assets/icons/common/plus-small.svg";
 
 const Navbar = () => {
-  const [newTransactionIsOpen, setNewTransactionIsOpen] = useState(false);
+  const [newTransactionIsOpen, setNewTransactionIsOpen] = useState(true);
   const { transactions } = useTransactionStore();
 
   return (
